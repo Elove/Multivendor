@@ -15,10 +15,10 @@ The admin will earn money through Membership plans and commissions on sales
 ## To do
 ## Extensions
 ## Themes
-Get the latest Multi Vendor themes on [our wbesite](codlance.com)
+Get the latest Multi Vendor themes on [our wbesite](htpps://codlance.com)
 ## Credits
-This software is built on top of [OpenCart](www.opencart.com) .
-Additional software and development done by [Ovicko](ovicko.com).
+This software is built on top of [OpenCart](http://opencart.com) .
+Additional software and development done by [Ovicko](https://ovicko.com).
 
 # Disclaimer
 This software is given as it is and the author is not liable in any way or any form for anything caused by use of this software.
