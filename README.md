@@ -5,6 +5,9 @@ Multi Vendor is a simple stand alone Open source script that can be used for eco
 Multi Vendor is built on top of OpenCart 3.x thus it inherits all the inbuilt  features of OpenCart.
 You can easily use the Multi Vendor to create a Marketplace store where both admin and customers can sell their goods and services.
 The admin will earn money through Membership plans and commissions on sales
+Checkout the Multi Vendor [DEMO](http://demo.codlance.com)
+
+
 ## Installation
     Unzip the zip files to your web directory.
     Rename the admin/config-dist.php,seller/config-dist.php and config-dist.php files to config.php.
