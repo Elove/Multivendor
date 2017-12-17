@@ -1,0 +1,296 @@
+{{ header }}
+<div class="container">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content">{{ content_top }}
+      <h3>{{ heading_title }}</h3>
+     
+      <div class="row"> {% if thumb %}
+        <div class="col-sm-2"><img src="{{ thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-thumbnail" /></div>
+        {% endif %}
+
+		{% if sellerating %}
+		<div class="rating col-sm-2"> {% for i in 1..5 %}
+		{% if sellerating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+		{% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+		</span>{% endif %}
+		{% endfor %} 
+
+		<a href="" onclick="$('a[href=\'#tab-reviews\']').trigger('click'); return false;">Feedback({{ sellereview }})</a>
+			</div>
+
+		{% endif %} 
+
+        {% if aboutus %}
+        <div class="col-sm-10">{{ aboutus }}</div>
+        {% endif %} </div>
+      <hr>
+     
+     
+      {% if products %}
+      <div class="row">
+        <div class="col-md-2 col-sm-6 hidden-xs">
+          <div class="btn-group btn-group-sm">
+            <button type="button" id="list-view" class="btn btn-common" data-toggle="tooltip" title="{{ button_list }}"><i class="fa fa-th-list"></i></button>
+            <button type="button" id="grid-view" class="btn btn-common" data-toggle="tooltip" title="{{ button_grid }}"><i class="fa fa-th"></i></button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group"><a href="{{ compare }}" id="compare-total" class="btn btn-common">{{ text_compare }}</a></div>
+        </div>
+        <div class="col-md-4 col-xs-6">
+          <div class="form-group input-group input-group-sm">
+            <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
+            <select id="input-sort" class="form-control" onchange="location = this.value;">
+              
+              
+              
+              {% for sorts in sorts %}
+              {% if sorts.value == '%s-%s'|format(sort, order) %}
+              
+              
+              
+              <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+              
+              
+              
+              {% else %}
+              
+              
+              
+              <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+              
+              
+              
+              {% endif %}
+              {% endfor %}
+            
+            
+            
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <div class="form-group input-group input-group-sm">
+            <label class="input-group-addon" for="input-limit">{{ text_limit }}</label>
+            <select id="input-limit" class="form-control" onchange="location = this.value;">
+              
+              
+              
+              {% for limits in limits %}
+              {% if limits.value == limit %}
+              
+              
+              
+              <option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
+              
+              
+              
+              {% else %}
+              
+              
+              
+              <option value="{{ limits.href }}">{{ limits.text }}</option>
+              
+              
+              
+              {% endif %}
+              {% endfor %}
+            
+            
+            
+            </select>
+          </div>
+        </div>
+      </div>
+
+       <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-products" data-toggle="tab">Products</a></li>
+              <li><a href="#tab-reviews" data-toggle="tab">Reviews</a></li>
+            
+          </ul>
+
+		  
+		   <div class="tab-content">
+      <div class="row"> 
+        <div id="product-layout">
+         <div  class="tab-pane active">
+         {% for product in products %}
+         <div  class="product-common col-md-4 col-sm-6 col-xs-12">
+           <div class="shop-product">
+           <div class="product-box">
+             <a href="{{ product.href }}">
+               <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+             </a>
+             <div class="cart-overlay">
+             </div>
+             <div class="actions">
+               <div class="add-to-links">
+                 <a type="button" class="btn-cart" onclick="cart.add('{{ product.product_id }}');">
+                   <i class="icon-basket"></i> 
+                 </a>
+                 <a type="button" class="btn-wish" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+                 <i class="fa fa-heart"></i>
+                 </a>
+               <a type="button" class="btn-quickview md-trigger" data-modal="modal-3" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');">
+               <i class="fa fa-exchange"></i>
+               </a>
+               </div>
+             </div>             
+           </div>
+           <div class="product-info">
+             <h4 class="product-title">
+               <a href="{{ product.href }}">{{ product.name }}</a>
+             </h4>  
+             <div class="common-align-items align-items">
+               <div  class="the-price pull-left">
+                   {% if product.price %}
+                     <span class="price">
+                     {% if not product.special %}
+                     {{ product.price }}
+                     {% else %}
+                     <span class="price-new">{{ product.special }}</span>
+                      <span class="price-old">{{ product.price }}</span>
+                     {% endif %}
+                   </span>
+                   {% endif %} 
+               </div>
+               <div class="pull-right-review pull-right">
+                {% if product.rating %}
+                <div class="for-list-view"></div>
+                 <div class="common-reviews-icon reviews-icon">
+                   {% for i in 5 %}
+                   {% if product.rating < i %}
+                   <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                   {% else %}
+                   <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                   {% endif %}
+                   {% endfor %}
+                  </div>
+                 {% endif %}
+               </div>
+             </div>
+             <div class="common-price fix" style="display: none">
+               <h4 class="product-title">
+               <a href="{{ product.href }}">{{ product.name }}</a>
+              </h4> 
+             </div>
+             <div class="list-view-price" style="display: none">
+             <br>
+               <div  class="pull-left">
+                   {% if product.price %}
+                     <span class="price">
+                     {% if not product.special %}
+                     {{ product.price }}
+                     {% else %}
+                     <span class="price-new">{{ product.special }}</span>
+                      <span class="price-old">{{ product.price }}</span>
+                     {% endif %}
+                   </span>
+                   {% endif %} 
+               </div>
+             </div>
+               <div class="product-description mb-20" style="display: none">
+                 <p>{{ product.description }}</p>
+               </div>
+               <div class="add-cart-btn" style="display: none;">
+                 <button class="btn btn-common" type="button" class="btn-cart" onclick="cart.add('{{ product.product_id }}');">
+                   <i class="icon-basket"></i> 
+               </button>
+               </div>
+           </div> 
+           </div>
+         </div> 
+         {% endfor %}
+         </div>
+        </div> 
+      </div>
+
+	  <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+
+	</div>
+
+	 <div class="tab-pane" id="tab-reviews">
+				
+				  <div id="review"></div>
+				
+				 </div>
+		   
+		   
+		   </div>
+		   
+
+
+    
+      {% endif %}
+      {% if  not products %}
+      <p>{{ text_empty }}</p>
+      <div class="buttons">
+        <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+      </div>
+      {% endif %}
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+<script>
+			
+function addToCarts(product_id, quantity,seller_id) {
+
+quantity = typeof(quantity) != 'undefined' ? quantity : 1;
+	seller_id = typeof(seller_id) != 'undefined' ? seller_id : 0;
+	
+
+		$.ajax({
+			url: 'index.php?route=checkout/cart/add',
+			type: 'post',
+			data: 'product_id=' + product_id + '&quantity=' + quantity+ '&seller_id=' + seller_id,
+			dataType: 'json',
+			success: function(json) {
+				$('.alert, .text-danger').remove();
+
+				if (json['redirect']) {
+					location = json['redirect'];
+				}
+
+				if (json['success']) {
+					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					
+					// Need to set timeout otherwise it wont update the total
+					setTimeout(function () {
+						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					}, 100);
+				
+					$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+				}
+			}
+		});
+	}
+	
+</script>
+
+<script type="text/javascript"><!--
+$('#review').delegate('.pagination a', 'click', function(e) {
+  e.preventDefault();
+
+    $('#review').fadeOut('slow');
+
+    $('#review').load(this.href);
+
+    $('#review').fadeIn('slow');
+});
+
+$('#review').load('index.php?route=product/seller/review&seller_id={{ seller_id }}');
+
+
+//--></script>
+{{ footer }} 

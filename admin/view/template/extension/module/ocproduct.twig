@@ -1,0 +1,691 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default tt-panel">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal tt-module">
+          <div class="form-group">
+            <label class="control-label" for="input-name">{{ entry_name }}</label>
+            <div class="control-option width-4">
+              <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              {% if error_name %}
+              <div class="text-danger">{{ error_name }}</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="input-status">{{ entry_status }}</label>
+            <div class="control-option">
+            <div class="switch tt-switch">
+              <input type="radio" name="status" class="switch-input" id="status-on" value="1" {% if status == 1 %} checked="checked" {% endif %}/>
+              <label for="status-on" class="switch-label switch-label-on">{{ text_enabled }}</label>
+              <input type="radio" name="status" class="switch-input" id="status-off" value="0" {% if status == 0 %} checked="checked" {% endif %}/>
+              <label for="status-off" class="switch-label switch-label-off">{{ text_disabled }}</label>
+              <span class="switch-selection"></span>
+                  </div>
+            </div>
+          </div>
+      
+          <div class="form-group parent-form">
+            <label class="control-label" for="input-option">{{ entry_type }}</label>
+            <div class="control-option">
+              <div class="switch switch-long switch-multi3">
+                <input type="radio" name="option" class="switch-input" id="option-all" value="0" onClick="GetOptionsSelect();" {% if option == 0 %} checked="checked"{% endif %}/>
+                <label for="option-all" class="switch-label switch-label-1">{{ entry_type_all }}</label>
+                <input type="radio" name="option" class="switch-input" id="option-cate" value="1" onClick="GetOptionsSelect();" {% if option == 1 %} checked="checked"{% endif %}/>
+                <label for="option-cate" class="switch-label switch-label-2">{{ entry_type_cate }}</label>
+                 <input type="radio" name="option" class="switch-input" id="option-auto" value="2" onClick="GetOptionsSelect();" {% if option == 2 %} checked="checked"{% endif %}/>
+                <label for="option-auto" class="switch-label switch-label-3">{{ entry_type_auto }}</label>
+                <span class="switch-selection"></span>
+              </div>
+            </div>
+          </div>
+       
+          {# -- All product select  #}
+          <div class="option-all-selected select-options">
+            <div class="form-group">
+              <label class="control-label" for="input-product">{{ entry_product }}</label>
+              <div class="control-option width-4">
+                <input type="text" name="product" value="" placeholder="{{ entry_product }}" id="input-product" class="form-control" />
+                <div id="featured-product" class="well well-sm" style="height: 150px; overflow: auto;">
+                  {% for product in products %}
+          
+                  <div id="featured-product{{ product.product_id }}" class="tt-product">
+                  <i class="fa fa-times"></i>
+                  <img src="{{ product.image }}" alt="" />
+                  {{ product.name }}
+            
+                  <input type="hidden" name="product[]" value="{{ product.product_id }}" />
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {# --------------------------- Categories tab-------------------------- #}
+          <div class="option-cate-selected select-options">
+            <div class="form-group">
+              <label class="control-label" for="input-cate_id">{{ entry_cate_select }}</label>
+              <div class="control-option width-3">
+                <input type="text" name="cate_name" value="{{ cate_ids.name }}" placeholder="Search category" id="input-cate_name" class="form-control" /><i class="fa fa-times"></i>
+                 <input type="hidden" name="cate_id" value="{{ cate_ids.category_id }}" id="input-cate_id" />
+               </div>
+               {% if error_category %}
+                  <div class="text-danger">{{ error_category }}</div>
+               {% endif %}
+             </div>
+            <div class="form-group parent-form">
+              <label class="control-label" for="input-productfrom">{{ entry_pfrom }}</label>
+              <div class="control-option width-3">            
+                <div class="switch switch-long switch-multi3">
+                  <input type="radio" name="productfrom" class="switch-input" id="productfrom-all" value="1" onClick="GetOptionsSelect();" {% if productfrom == 1 %} checked="checked"{% endif %}/>
+                  <label for="productfrom-all" class="switch-label switch-label-1">{{ entry_pfrom_all }}</label>
+                  <input type="radio" name="productfrom" class="switch-input" id="productfrom-select" value="0" onClick="GetOptionsSelect();" {% if productfrom == 0 %} checked="checked"{% endif %}/>
+                  <label for="productfrom-select" class="switch-label switch-label-2">{{ entry_pfrom_select }}</label>
+                  <input type="radio" name="productfrom" class="switch-input" id="specific-product" value="2" onClick="GetOptionsSelect();" {% if productfrom == 2 %} checked="checked"{% endif %}/>
+                  <label for="specific-product" class="switch-label switch-label-3">{{ entry_specificproduct }}</label>
+                  <span class="switch-selection"></span>
+                </div>
+              </div>
+            </div>
+            <div class="productfrom-all-selected select-options">
+            </div>
+            <div class="productfrom-select-selected select-options">
+              <div class="form-group">
+                <label class="control-label" for="input-productcate">{{ entry_product }}</label>
+                <div class="control-option width-4">
+                  <input type="text" name="productcate" value="" placeholder="{{ entry_product }}" id="input-productcate" class="form-control" />
+                  <div id="category-product" class="well well-sm" style="height: 150px; overflow: auto;">
+                    {% for productcate in productcates %}
+                    <div id="category-product{{ productcate.product_id }}" class="tt-product">          
+                      <img src="{{ productcate.image }}" alt="" />
+                      {{ productcate.name }}            
+                      <input type="hidden" name="productcate[]" value="{{ productcate.product_id }}" />
+                      <i class="fa fa-times"></i>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="specific-product-selected select-options">
+              <div class="form-group">
+                <label class="control-label" for="input-specific-product">{{ entry_selectspecificproduct }}</label>
+                <div class="control-option width-3">
+                  <small class="text-for-specificproducts" style="padding: 0 0 10px 0; float: left;">{{ entry_selectspecificproduct_small }}</small>
+                  <select name="input_specific_product" id="input-specific-product" class="form-control">
+                    {% if input_specific_product == 0 %}
+                      <option value="0" selected="selected">{{ entry_new }}</option>
+                      <option value="1">{{ entry_sale }}</option>
+                      <option value="2">{{ entry_bestseller }}</option>
+                      <option value="3">{{ entry_mostview }}</option>
+                      <option value="4">{{ entry_dealproducts }}</option>
+                     {% elseif input_specific_product == 1 %}
+                      <option value="0">{{ entry_new }}</option>
+                      <option value="1" selected="selected">{{ entry_sale }}</option>
+                      <option value="2">{{ entry_bestseller }}</option>
+                      <option value="3">{{ entry_mostview }}</option>
+                      <option value="4">{{ entry_dealproducts }}</option>
+                     {% elseif input_specific_product == 2 %}
+                      <option value="0">{{ entry_new }}</option>
+                      <option value="1">{{ entry_sale }}</option>
+                      <option value="2" selected="selected">{{ entry_bestseller }}</option>
+                      <option value="3">{{ entry_mostview }}</option>
+                      <option value="4">{{ entry_dealproducts }}</option>
+                    {% elseif input_specific_product == 3 %}
+                      <option value="0">{{ entry_new }}</option>
+                      <option value="1">{{ entry_sale }}</option>
+                      <option value="2">{{ entry_bestseller }}</option>
+                      <option value="3" selected="selected">{{ entry_mostview }}</option>
+                      <option value="4">{{ entry_dealproducts }}</option>
+                    {% else %}
+                      <option value="0">{{ entry_new }}</option>
+                      <option value="1">{{ entry_sale }}</option>
+                      <option value="2">{{ entry_bestseller }}</option>
+                      <option value="3">{{ entry_mostview }}</option>
+                      <option value="4" selected="selected">{{ entry_dealproducts }}</option>
+                    {% endif %}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+     
+          {#--------------------------- Auto tab ----------------------- #}
+          <div class="option-auto-selected select-options">
+            <div class="form-group auto-select">
+              <label class="control-label" for="input-autoproduct">{{ entry_product }}</label>
+              <div class="control-option width-2">
+                <select name="autoproduct" id="input-select" class="form-control">
+                  {% if autoproduct == 0 %}
+                    <option value="0" selected="selected">{{ entry_new }}</option>
+                    <option value="1">{{ entry_sale }}</option>
+                    <option value="2">{{ entry_bestseller }}</option>
+                    <option value="3">{{ entry_mostview }}</option>
+                    <option value="4">{{ entry_dealproducts }}</option>
+                   {% elseif autoproduct == 1 %}
+                    <option value="0">{{ entry_new }}</option>
+                    <option value="1" selected="selected">{{ entry_sale }}</option>
+                    <option value="2">{{ entry_bestseller }}</option>
+                    <option value="3">{{ entry_mostview }}</option>
+                    <option value="4">{{ entry_dealproducts }}</option>
+                   {% elseif autoproduct == 2 %}
+                    <option value="0">{{ entry_new }}</option>
+                    <option value="1">{{ entry_sale }}</option>
+                    <option value="2" selected="selected">{{ entry_bestseller }}</option>
+                    <option value="3">{{ entry_mostview }}</option>
+                    <option value="4">{{ entry_dealproducts }}</option>
+                  {% elseif  autoproduct == 3  %}
+                    <option value="0">{{ entry_new }}</option>
+                    <option value="1">{{ entry_sale }}</option>
+                    <option value="2">{{ entry_bestseller }}</option>
+                    <option value="3" selected="selected">{{ entry_mostview }}</option>
+                    <option value="4">{{ entry_dealproducts }}</option>
+                  {% else %}
+                    <option value="0">{{ entry_new }}</option>
+                    <option value="1">{{ entry_sale }}</option>
+                    <option value="2">{{ entry_bestseller }}</option>
+                    <option value="3">{{ entry_mostview }}</option>
+                    <option value="4" selected="selected">{{ entry_dealproducts }}</option>
+                  {% endif %}
+                </select>
+              </div>
+            </div>
+          </div>
+				
+          <div class="form-group">
+            <label class="control-label" for="input-row">{{ entry_title }}</label>
+            <div class="control-option width-4">
+              {% for language in languages %}
+                <div class="input-group">
+                  <span class="input-group-addon">{{ language.name }}</span>
+                  <input type="text" name="title_lang[{{ language.code }}][title]" value="{{ title_lang[language.code].title ? title_lang[language.code].title }}" placeholder="" id="input-title{{ language.language_id }}" class="form-control" />
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+		  <div class="form-group">
+			<label class="control-label" for="input-class">{{ entry_class }}</label>
+			<div class="control-option width-4">
+			  <input type="text" name="class" value="{{ class }}" placeholder="{{ entry_class }}" id="input-class" class="form-control" />
+			</div>
+		</div>	
+      {# -----Description------ #}
+      <div class="form-group">
+        <label class="control-label" for="input-description{{ language.language_id }}">{{ entry_description }}</label>
+          <div class="control-control">
+            <div class="tab-content" style="margin: 10px;">
+              {% for language in languages %}
+              <div id="language{{ language.language_id }}">
+                  <a href="javascript:void(0)" class="language-label"><span>{{ language.name }}</span><i class="fa fa-angle-down"></i></a>
+                  <div class="html-content">
+                     <textarea name="module_description[{{ language.language_id }}][description]" placeholder="{{ entry_description }}" id="input-description{{ language.language_id }}" class="form-control summernote">{{ module_description[language.language_id] ? module_description[language.language_id].description }}</textarea>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      {# ----End Description----- #}
+      <div class="form-group">
+        <label class="control-label" for="input-type">{{ entry_product_type }}</label>
+        <div class="control-option width-1">
+          <div class="switch switch-long switch-multi3">
+            <input type="radio" name="type" class="switch-input" id="type-grid" value="0" {% if type == 0 %} checked="checked"{% endif %}/>
+            <label for="type-grid" class="switch-label switch-label-1">{{ entry_grid }}</label>
+            <input type="radio" name="type" class="switch-input" id="type-list" value="1" {% if type == 1 %} checked="checked"{% endif %}/>
+            <label for="type-list" class="switch-label switch-label-2">{{ entry_list }}</label>
+            <input type="radio" name="type" class="switch-input" id="type-other" value="2" {% if type == 2 %} checked="checked"{% endif %}/>
+            <label for="type-other" class="switch-label switch-label-3">{{ entry_other }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group parent-form">
+        <label class="control-label" for="input-navigation">{{ entry_slider }}</label>
+        <div class="control-option">    
+          <div class="switch switch-bol">
+            <input type="radio" name="slider" class="switch-input" id="slider-on" value="1" onClick="GetOptionsSelect();" {% if slider == 1 %} checked="checked"{% endif %}/>
+            <label for="slider-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="slider" class="switch-input" id="slider-off" value="0" onClick="GetOptionsSelect();" {% if slider == 0 %} checked="checked"{% endif %}/>
+            <label for="slider-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="slider-on-selected select-options">
+        <div class="form-group">
+          <label class="control-label" for="input-items">{{ entry_item }}</label>
+          <div class="control-option width-1">
+            <input type="text" name="items" value="{{ items }}" placeholder="" id="input-items" class="tt-number-field" />
+          </div>
+        </div>  
+        <div class="form-group">
+          <label class="control-label" for="input-auto">{{ entry_auto }}</label>
+          <div class="control-option">
+            <div class="switch switch-bol">
+              <input type="radio" name="auto" class="switch-input" id="auto-on" value="1" {% if auto == 1 %} checked="checked"{% endif %}/>
+              <label for="auto-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+              <input type="radio" name="auto" class="switch-input" id="auto-off" value="0" {% if auto == 0 %} checked="checked"{% endif %}/>
+              <label for="auto-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-time">{{ entry_time }}</label>
+          <div class="control-option width-2">
+            <input type="text" name="time" value="{{ time }}" placeholder="" id="input-time" class="tt-number-field" />
+            <span class="suffix">miliseconds</span>
+          </div>
+        </div>  
+        <div class="form-group">
+          <label class="control-label" for="input-time">{{ entry_speed }}</label>
+          <div class="control-option width-2">
+            <input type="text" name="speed" value="{{ speed }}" placeholder="" id="input-speed" class="tt-number-field" />
+            <span class="suffix">miliseconds</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-row">{{ entry_rows }}</label>
+          <div class="control-option width-1">
+            <input type="text" name="row" value="{{ row }}" placeholder="" id="input-row" class="tt-number-field" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-loop">{{ entry_loop }}</label>
+          <div class="control-option">
+            <div class="switch switch-bol">
+              <input type="radio" name="loop" class="switch-input" id="loop-on" value="1" {% if loop == 1 %} checked="checked"{% endif %}/>
+              <label for="loop-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+              <input type="radio" name="loop" class="switch-input" id="loop-off" value="0" {% if loop == 0 %} checked="checked"{% endif %}/>
+              <label for="loop-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-time">{{ entry_margin }}</label>
+          <div class="control-option width-2">
+            <input type="text" name="margin" value="{{ margin }}" placeholder="" id="input-margin" class="tt-number-field" />
+            <span class="suffix">pixels</span>
+          </div>
+        </div>
+		
+        <div class="form-group">
+          <label class="control-label" for="input-navigation">{{ entry_navigation }}</label>
+          <div class="control-option">           
+            <div class="switch switch-bol">
+            <input type="radio" name="navigation" class="switch-input" id="navigation-on" value="1" {% if navigation == 1 %} checked="checked"{% endif %}/>
+            <label for="navigation-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="navigation" class="switch-input" id="navigation-off" value="0" {% if navigation == 0 %} checked="checked"{% endif %}/>
+            <label for="navigation-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-pagination">{{ entry_pagination }}</label>
+          <div class="control-option">       
+            <div class="switch switch-bol">
+            <input type="radio" name="pagination" class="switch-input" id="pagination-on" value="1" {% if pagination == 1 %} checked="checked"{% endif %}/>
+            <label for="pagination-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="pagination" class="switch-input" id="pagination-off" value="0" {% if pagination == 0 %}  checked="checked"{% endif %}/>
+            <label for="pagination-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="input-width">{{ entry_responsive }}</label>
+          <div class="control-option width-6">
+           <i class="fa fa-desktop"></i> {{ entry_desktop }}
+           <input type="text" name="desktop" value="{{ desktop }}" placeholder="" id="responsive-desktop" class="tt-number-field" />
+            {% if error_width %}
+            <div class="text-danger">{{ error_responsive }}</div>
+            {% endif %}
+            <i class="fa fa-laptop"></i> {{ entry_sdesktop }}
+            <input type="text" name="tablet" value="{{ tablet }}" placeholder="" id="responsive-tablet" class="tt-number-field" />
+            {% if error_width %}
+            <div class="text-danger">{{ error_responsive }}</div>
+            {% endif %}
+            <i class="fa fa-tablet"></i> {{ entry_tablet }}
+            <input type="text" name="mobile" value="{{ mobile }}" placeholder="" id="responsive-mobile" class="tt-number-field" />
+            {% if error_width %}
+            <div class="text-danger">{{ error_responsive }}</div>
+            {% endif %}
+             <i class="fa fa-mobile"></i> {{ entry_mobile }}
+            <input type="text" name="smobile" value="{{ smobile }}" placeholder="" id="responsive-smobile" class="tt-number-field" />
+            {% if error_width %}
+            <div class="text-danger">{{ error_responsive }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="slider-off-selected select-options">
+        <div class="form-group">{# if "Using slider" is false #}
+          <label class="control-label" for="input-row">{{ entry_pprow }}</label>
+          <div class="control-option width-1">
+            <select name="nrow" id="input-nrow" class="form-control">
+              {% if nrow == 0 %}
+                <option value="0" selected="selected">2</option>
+                <option value="1">3</option>
+                <option value="2">4</option>
+                <option value="3">6</option>
+              {% elseif nrow == 1 %}
+                <option value="0">2</option>
+                <option value="1" selected="selected">3</option>
+                <option value="2">4</option>
+                <option value="3">6</option>
+              {% elseif nrow == 2 %}
+                <option value="0">2</option>
+                <option value="1">3</option>
+                <option value="2" selected="selected">4</option>
+                <option value="3">6</option>
+              {% else %}
+                <option value="0">2</option>
+                <option value="1">3</option>
+                <option value="2">4</option>
+                <option value="3" selected="selected">6</option>
+              {% endif %}
+            </select>
+          </div>
+        </div>
+      </div>
+      {# ------------------ #}
+	  <div class="form-group">
+          <label class="control-label" for="input-showcart">{{ entry_showcart }}</label>
+          <div class="control-option">           
+            <div class="switch switch-bol">
+            <input type="radio" name="showcart" class="switch-input" id="showcart-on" value="1" {% if showcart == 1 %} checked="checked"{% endif %}/>
+            <label for="showcart-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="showcart" class="switch-input" id="showcart-off" value="0" {% if showcart == 0 %} checked="checked"{% endif %}/>
+            <label for="showcart-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+		<div class="form-group">
+          <label class="control-label" for="input-showwishlist">{{ entry_showwishlist }}</label>
+          <div class="control-option">           
+            <div class="switch switch-bol">
+            <input type="radio" name="showwishlist" class="switch-input" id="showwishlist-on" value="1" {% if showwishlist == 1 %} checked="checked"{% endif %}/>
+            <label for="showwishlist-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="showwishlist" class="switch-input" id="showwishlist-off" value="0" {% if showwishlist == 0 %} checked="checked"{% endif %}/>
+            <label for="showwishlist-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+		<div class="form-group">
+          <label class="control-label" for="input-showcompare">{{ entry_showcompare }}</label>
+          <div class="control-option">           
+            <div class="switch switch-bol">
+            <input type="radio" name="showcompare" class="switch-input" id="showcompare-on" value="1" {% if showcompare == 1 %} checked="checked"{% endif %}/>
+            <label for="showcompare-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="showcompare" class="switch-input" id="showcompare-off" value="0" {% if showcompare == 0 %} checked="checked"{% endif %}/>
+            <label for="showcompare-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+		<div class="form-group">
+          <label class="control-label" for="input-showquickview">{{ entry_showquickview }}</label>
+          <div class="control-option">           
+            <div class="switch switch-bol">
+            <input type="radio" name="showquickview" class="switch-input" id="showquickview-on" value="1" {% if showquickview == 1 %} checked="checked"{% endif %}/>
+            <label for="showquickview-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="showquickview" class="switch-input" id="showquickview-off" value="0" {% if showquickview == 0 %} checked="checked"{% endif %}/>
+            <label for="showquickview-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+            </div>
+          </div>
+        </div>
+      <div class="form-group">
+        <label class="control-label" for="input-navigation">{{ entry_show_description }}</label>
+        <div class="control-option">
+          <div class="switch switch-bol">
+            <input type="radio" name="description" class="switch-input" id="description-on" value="1" {% if description == 1 %} checked="checked"{% endif %}/>
+            <label for="description-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="description" class="switch-input" id="description-off" value="0" <{% if description == 0 %} checked="checked"{% endif %}/>
+            <label for="description-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-navigation">{{ entry_countdown }}<small>{{ entry_countdown_small }}</small></label>
+        <div class="control-option">
+          <div class="switch switch-bol">
+            <input type="radio" name="countdown" class="switch-input" id="countdown-on" value="1" {% if countdown == 1 %} checked="checked"{% endif %}/>
+            <label for="countdown-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="countdown" class="switch-input" id="countdown-off" value="0" {% if countdown == 0 %} checked="checked"{% endif %}/>
+            <label for="countdown-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-navigation">{{ entry_rotator }}</label>   
+        <div class="control-option">
+          <div class="switch switch-bol">
+            <input type="radio" name="rotator" class="switch-input" id="rotator-on" value="1" {% if rotator == 1 %} checked="checked"{% endif %}/>
+            <label for="rotator-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="rotator" class="switch-input" id="rotator-off" value="0" {% if rotator == 0 %} checked="checked"{% endif %}/>
+            <label for="rotator-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-navigation">{{ entry_newlabel }}</label>    
+        <div class="control-option">
+          <div class="switch switch-bol">
+            <input type="radio" name="newlabel" class="switch-input" id="newlabel-on" value="1" {% if newlabel == 1 %} checked="checked"{% endif %}/>
+            <label for="newlabel-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="newlabel" class="switch-input" id="newlabel-off" value="0" {% if newlabel == 0 %} checked="checked"{% endif %}/>
+            <label for="newlabel-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-navigation">{{ entry_salelabel }}</label>   
+        <div class="control-option">
+          <div class="switch switch-bol">
+            <input type="radio" name="salelabel" class="switch-input" id="salelabel-on" value="1" {% if salelabel == 1 %} checked="checked"{% endif %}/>
+            <label for="salelabel-on" class="switch-label switch-label-on">{{ entry_yes }}</label>
+            <input type="radio" name="salelabel" class="switch-input" id="salelabel-off" value="0" {% if salelabel == 0 %} checked="checked"{% endif %}/>
+            <label for="salelabel-off" class="switch-label switch-label-off">{{ entry_no }}</label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-limit">{{ entry_limit }}</label>
+        <div class="control-option width-1">
+          <input type="text" name="limit" value="{{ limit }}" placeholder="{{ entry_limit }}" id="input-limit" class="tt-number-field" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="input-width">{{ entry_size }}<small>{{ entry_dessize }}</small></label>
+        <div class="control-option width-2">
+          <input type="text" name="width" value="{{ width }}" placeholder="" id="input-width" class="tt-number-field" />
+          {% if error_width %}
+          <div class="text-danger">{{ error_width }}</div>
+          {% endif %}
+           x
+          <input type="text" name="height" value="{{ height }}" placeholder="" id="input-height" class="tt-number-field" />
+          {% if error_height %}
+          <div class="text-danger">{{ error_height }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+    </form>
+    </div>
+  </div>
+</div>
+<link href="view/javascript/codemirror/lib/codemirror.css" rel="stylesheet" />
+  <link href="view/javascript/codemirror/theme/monokai.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/codemirror/lib/codemirror.js"></script> 
+  <script type="text/javascript" src="view/javascript/codemirror/lib/xml.js"></script> 
+  <script type="text/javascript" src="view/javascript/codemirror/lib/formatting.js"></script> 
+    
+  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/summernote-image-attributes.js"></script>
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+  <script type="text/javascript"><!--
+  var category_id;
+$('input[name=\'product\']').autocomplete({
+  source: function(request, response) {
+    $.ajax({
+      url: 'index.php?route=extension/module/ocproduct/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+      dataType: 'json',
+      success: function(json) {
+        response($.map(json, function(item) {
+          return {
+            image: item['image'],
+            label: item['name'],
+            value: item['product_id'] 
+          }
+        }));
+      }
+    });
+  },
+  select: function(item) {
+    $('input[name=\'product\']').val('');
+    
+    $('#featured-product' + item['value']).remove();
+    
+    $('#featured-product').append('<div id="featured-product' + item['value'] + '" class="tt-product"><i class="fa fa-times"></i> ' + '<img src="' +item['image']+ '" alt=""/>' + item['label'] + '<input type="hidden" name="product[]" value="' + item['value'] + '" /></div>');  
+    
+    $('#featured-product').scrollTop(1000);
+  }
+});
+$('#featured-product').delegate('.fa-times', 'click', function() {
+  $(this).parent().remove();
+});
+// Search category
+$('input[name=\'cate_name\']').autocomplete({
+  source: function(request, response) {
+    $.ajax({
+      url: 'index.php?route=extension/module/ocproduct/autocompleteCategory&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+      dataType: 'json',
+      success: function(json) {
+        response($.map(json, function(item) {
+          return {
+            label: item['name'],
+            value: item['category_id']
+          }
+        }));
+      }
+    });
+  },
+  select: function(item) {  
+    document.getElementById("input-cate_name").value= item['label'];  
+    document.getElementById("input-cate_id").value= item['value'];  
+    $('#featured-productcate').children().remove();
+    }
+});
+$('#input-cate_name').parent().delegate('.fa-times', 'click', function() {
+  document.getElementById("input-cate_name").value= '';
+  document.getElementById("input-cate_id").value= '';
+  $('#category-product').children().remove();
+});
+
+// Search product from category
+$('input[name=\'productcate\']').autocomplete({
+  source: function( request, response) {
+    $.ajax({
+      url: 'index.php?route=extension/module/ocproduct/getProductCategory&user_token={{ user_token }}&category_id=' + $("#input-cate_id").val()+ '&filter_name=' +  encodeURIComponent(request),
+      dataType: 'json',
+      data: {
+      },
+      success: function(json) {
+        response($.map(json, function(item) {
+          return {
+            image: item['image'],
+            label: item['name'],
+            value: item['product_id'] 
+          }
+        }));
+        
+      }
+    });
+  },
+  select: function(item) {
+    $('input[name=\'productcate\']').val('');
+    
+    $('#category-product' + item['value']).remove();
+    
+    $('#category-product').append('<div id="category-product' + item['value'] + '" class="tt-product"><i class="fa fa-times"></i> ' + '<img src="' +item['image']+ '" alt=""/>' + item['label'] + '<input type="hidden" name="productcate[]" value="' + item['value'] + '" /></div>');  
+    
+    $('#category-product').scrollTop(1000);
+  }
+});
+  
+$('#category-product').delegate('.fa-times', 'click', function() {
+  $(this).parent().remove();
+});
+
+function GetOptionsSelect() {
+    $('.select-options').hide();
+    var ParentForms = document.getElementsByClassName('parent-form');
+    for (var j = 0; j < ParentForms.length; j ++){
+      var InputChilds = ParentForms[j].getElementsByTagName('input');
+      for (var i = 0; i < InputChilds.length; i++) {
+            if (InputChilds[i].checked) {
+              console.log(id);
+              var id = InputChilds[i].id;
+              var test = $('.'+id+'-selected');
+              $(test).show();
+
+            } //end if
+ 
+      } // end for
+    };
+    
+} //end
+
+$(document).ready(function(){
+  GetOptionsSelect(); 
+  $('.list-selection label').on('click',function(){
+      $(this).parent().find('.active').removeClass('active');
+      $(this).addClass('active');
+  });
+
+})
+{% for language in languages %}
+$('#input-description{{ language.language_id }}').summernote({height: 300});
+$('#language{{ language.language_id }} .html-content').hide();
+$('#language{{ language.language_id }} a').click(function(){
+  $('#language{{ language.language_id }} .html-content').slideToggle();
+});
+$('#input-title{{ language.language_id }}').parent().parent().parent().css('border-top','2px solid #279CBB');
+{% endfor %}
+//--></script>
+</div>
+{{ footer }}

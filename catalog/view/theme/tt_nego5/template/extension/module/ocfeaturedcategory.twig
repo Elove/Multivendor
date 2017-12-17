@@ -1,0 +1,92 @@
+<div class="featured-categories-container module-nav2">
+<div class="featured-categories-slider module-title"><h2>{{ heading_title }}</h2></div>
+	{% set count, rows = 0, config_slide.f_rows %}
+	{% if not rows %}
+		{% set rows = 1 %}
+	{% endif %}
+	<div class="owl-featured-categories owl-carousel owl-theme">
+		{% for category in categories %}
+			{% if count % rows == 0 %}
+			<div class="row_items">
+			{% endif %}
+				<div class="fcategory-content">
+					<div class="image">
+						<a href="{{ category.href }}"><img src="{{ category.homethumb_image }}" alt="" /></a>
+					</div>
+					<div class="content-thumb">
+						<h2 class="name"><a href="{{ category.href }}">{{ category.name }}</a></h2>
+						{% if config_slide.show_description %}
+							<p class="dec">{{ category.description }}</p>
+						{% endif %}
+						{% if config_slide.show_sub_category %}
+							{% set number_sub = config_slide.number_sub %}
+							{% if category.children %}
+								{% set sub_count = 0 %}
+								<ul class="sub-featured-categories">
+									{% for subcate in category.children %}
+										{% if sub_count < number_sub %}
+										<li><a href="{{ subcate.href }}">{{ subcate.name }}</a></li>
+										{% endif %}
+										{% set sub_count = sub_count + 1 %}
+									{% endfor %}
+								</ul>
+							{% endif %}
+						{% endif %}
+						<a href="{{ category.href }}" class="view-more">{{ view_more }}</a>
+					</div>
+				</div>
+			{% if (count % rows == 0) or (count == categories|length) %}
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+{% if config_slide.use_slider %}
+<script type="text/javascript">
+$(document).ready(function() { 
+  $(".owl-featured-categories").owlCarousel({
+	autoplaySpeed: {% if config_slide.f_speed %} {{ config_slide.f_speed }} {% else %} 3000 {% endif %},
+	navSpeed: {% if config_slide.f_speed %} {{ config_slide.f_speed }} {% else %} 3000 {% endif %},
+	dotsSpeed: {% if config_slide.f_speed %} {{ config_slide.f_speed }} {% else %} 3000 {% endif %},
+    items : {% if config_slide.items %} {{ config_slide.items }} {% else %} 3 {% endif %},
+	autoplay : {% if config_slide.autoplay %} true {% else %} false {% endif %},
+	nav: {% if config_slide.f_show_nextback %} true {% else %} false {% endif %},
+	dots: {% if config_slide.f_show_ctr %} true {% else %} false {% endif %},
+	autoplayHoverPause : false,
+	responsive:{
+		0:{
+			items: 1,
+			nav: false
+		},
+		480:{
+			items: 2,
+			nav: false
+		},
+		768:{
+			items: 3
+		},
+		992:{
+			items: 3
+		},
+		1200:{
+			items: {% if config_slide.items %} {{ config_slide.items }} {% else %} 3 {% endif %}
+		},
+	},
+	onInitialized: function() {
+		owlAction();
+	},
+	onTranslated: function() {
+		owlAction();
+	}
+  });
+  function owlAction() {
+	$(".owl-featured-categories .owl-item").removeClass('first');
+	$(".owl-featured-categories .owl-item").removeClass('last');
+	$(".owl-featured-categories .owl-item").removeClass('before-active');
+	$(".owl-featured-categories .owl-item.active:first").addClass('first');
+	$(".owl-featured-categories .owl-item.active:last").addClass('last');
+	$('.owl-featured-categories .owl-item.active:first').prev().addClass('before-active');
+	}
+});
+</script>
+{% endif %}

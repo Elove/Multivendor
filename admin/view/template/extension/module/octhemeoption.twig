@@ -1,0 +1,375 @@
+{{ header }}{{ column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right">
+                <button type="submit" form="form-octhemeoption" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% if error_warning %}
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        {% if error_load_file %}
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_load_file }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        {% if success %}
+            <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pencil"></i>{{ text_edit }}</h3>
+            </div>
+            <div class="panel-body">
+                <form action="{{ action_import }}" method="post" enctype="multipart/form-data" id="form-data" class="form-horizontal">
+                    <input type="hidden" name="file" />
+                </form>
+
+                <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-octhemeoption" class="form-horizontal">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-stylesheet" data-toggle="tab">{{ tab_stylesheet }}</a></li>
+                        <li><a href="#tab-configuration" data-toggle="tab">{{ tab_configuration }}</a></li>
+                        <li><a href="#tab-database" data-toggle="tab" >{{ tab_backup }}</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-stylesheet">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="input-stylesheet-store">{{ entry_store }}</label>
+                                <div class="col-sm-6">
+                                    <select id="input-stylesheet-store" class="form-control">
+                                        {% for store in stores %}
+                                            <option value="{{ store.store_id }}" {% if(store.store_id == 0) %}selected="selected"{% endif %}>{{ store.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {% for store in stores %}
+                            <div id="frm-stylesheet-{{ store.store_id }}" class="frm-stylesheet">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-status-{{ store.store_id }}">{{ entry_status }}</label>
+                                    <div class="col-sm-6">
+                                        <select name="module_octhemeoption_status[{{ store.store_id }}]" id="input-status-{{ store.store_id }}" data-id="{{ store.store_id }}" class="form-control style-status">
+                                            {% if module_octhemeoption_status[store.store_id] %}
+                                                <option value="1" selected="selected">{{ text_enabled }}</option>
+                                                <option value="0">{{ text_disabled }}</option>
+                                            {% else %}
+                                                <option value="1">{{ text_enabled }}</option>
+                                                <option value="0" selected="selected">{{ text_disabled }}</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row stylesheet-settings" id="stylesheet-settings-{{ store.store_id }}">
+                                    <div class="col-sm-2">
+                                        <ul class="nav nav-pills nav-stacked" id="stylesheet">
+                                            <li class="active"><a href="#tab-body-{{ store.store_id }}" data-toggle="tab">{{ tab_body }}</a></li>
+                                            <li><a href="#tab-a-{{ store.store_id }}" data-toggle="tab">{{ tab_a }}</a></li>
+                                            <li><a href="#tab-header-{{ store.store_id }}" data-toggle="tab">{{ tab_header }}</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab-body-{{ store.store_id }}">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-body-color">{{ entry_color }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-body-color" class="jscolor form-control" name="module_octhemeoption_body[{{ store.store_id }}][color]" value="{{ module_octhemeoption_body[store.store_id].color }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-body-font-family">{{ entry_font_family }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-body-font-family" class="form-control" name="module_octhemeoption_body[{{ store.store_id }}][font_family]" value="{{ module_octhemeoption_body[store.store_id].font_family }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-body-font-size">{{ entry_font_size }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-body-font-size" class="form-control" name="module_octhemeoption_body[{{ store.store_id }}][font_size]" value="{{ module_octhemeoption_body[store.store_id].font_size }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-body-font-weight">{{ entry_font_weight }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-body-font-weight" class="form-control" name="module_octhemeoption_body[{{ store.store_id }}][font_weight]" value="{{ module_octhemeoption_body[store.store_id].font_weight }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-line-height">{{ entry_line_height }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-line-height" class="form-control" name="module_octhemeoption_body[{{ store.store_id }}][line_height]" value="{{ module_octhemeoption_body[store.store_id].line_height }}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane" id="tab-a-{{ store.store_id }}">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-color">{{ entry_color }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-color" class="jscolor form-control" name="module_octhemeoption_a_tag[{{ store.store_id }}][color]" value="{{ module_octhemeoption_a_tag[store.store_id].color }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-hover-color">{{ entry_hover_color }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-hover-color" class="jscolor form-control" name="module_octhemeoption_a_tag[{{ store.store_id }}][hover_color]" value="{{ module_octhemeoption_a_tag[store.store_id].hover_color }}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane" id="tab-header-{{ store.store_id }}">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-hcolor">{{ entry_color }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-hcolor" class="jscolor form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][color]" value="{{ module_octhemeoption_header_tag[store.store_id].color }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-hfont-family">{{ entry_font_family }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-hfont-family" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][font_family]" value="{{ module_octhemeoption_header_tag[store.store_id].font_family }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="input-hfont-weight">{{ entry_font_weight }}</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" id="input-hfont-weight" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][font_weight]" value="{{ module_octhemeoption_header_tag[store.store_id].font_weight }}" />
+                                                    </div>
+                                                </div>
+
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#tab-h1-{{ store.store_id }}" data-toggle="tab">{{ 'h1' }}</a></li>
+                                                    <li><a href="#tab-h2-{{ store.store_id }}" data-toggle="tab">{{ 'h2' }}</a></li>
+                                                    <li><a href="#tab-h3-{{ store.store_id }}" data-toggle="tab">{{ 'h3' }}</a></li>
+                                                    <li><a href="#tab-h4-{{ store.store_id }}" data-toggle="tab">{{ 'h4' }}</a></li>
+                                                    <li><a href="#tab-h5-{{ store.store_id }}" data-toggle="tab">{{ 'h5' }}</a></li>
+                                                    <li><a href="#tab-h6-{{ store.store_id }}" data-toggle="tab">{{ 'h6' }}</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="tab-h1-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h1-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h1-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h1][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h1.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="tab-h2-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h2-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h2-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h2][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h2.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="tab-h3-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h3-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h3-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h3][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h3.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="tab-h4-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h4-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h4-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h4][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h4.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="tab-h5-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h5-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h5-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h5][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h5.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="tab-h6-{{ store.store_id }}">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label" for="input-h6-font-size">{{ entry_font_size }}</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input-h6-font-size" class="form-control" name="module_octhemeoption_header_tag[{{ store.store_id }}][h6][font_size]" value="{{ module_octhemeoption_header_tag[store.store_id].h6.font_size }}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="tab-pane" id="tab-configuration">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="input-image">{{ entry_loader_image }}</label>
+                                <div class="col-sm-10">
+                                    <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="{{ thumb }}" alt="" title=""  /></a>
+                                    <input type="hidden" name="module_octhemeoption_loader_img" value="{{ module_octhemeoption_loader_img }}" id="input-image" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="input-configuration-store">{{ entry_store }}</label>
+                                <div class="col-sm-6">
+                                    <select id="input-configuration-store" class="form-control">
+                                        {% for store in stores %}
+                                            <option value="{{ store.store_id }}" {% if(store.store_id == 0) %}selected="selected"{% endif %}>{{ store.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {% for store in stores %}
+                            <div id="frm-configuration-{{ store.store_id }}" class="frm-configuration">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-catalog-{{ store.store_id }}">{{ entry_catalog }}</label>
+                                    <div class="col-sm-6">
+                                        <select name="module_octhemeoption_catalog[{{ store.store_id }}]" id="input-catalog-{{ store.store_id }}" class="form-control">
+                                            {% if module_octhemeoption_catalog[store.store_id] %}
+                                                <option value="1" selected="selected">{{ text_enabled }}</option>
+                                                <option value="0">{{ text_disabled }}</option>
+                                            {% else %}
+                                                <option value="1">{{ text_enabled }}</option>
+                                                <option value="0" selected="selected">{{ text_disabled }}</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-rotator-{{ store.store_id }}">{{ entry_rotator }}</label>
+                                    <div class="col-sm-6">
+                                        <select name="module_octhemeoption_rotator[{{ store.store_id }}]" id="input-rotator-{{ store.store_id }}" class="form-control">
+                                            {% if module_octhemeoption_rotator[store.store_id] %}
+                                                <option value="1" selected="selected">{{ text_enabled }}</option>
+                                                <option value="0">{{ text_disabled }}</option>
+                                            {% else %}
+                                                <option value="1">{{ text_enabled }}</option>
+                                                <option value="0" selected="selected">{{ text_disabled }}</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-quickview-{{ store.store_id }}">{{ entry_quickview }}</label>
+                                    <div class="col-sm-6">
+                                        <select name="module_octhemeoption_quickview[{{ store.store_id }}]" id="input-quickview-{{ store.store_id }}" class="form-control">
+                                            {% if module_octhemeoption_quickview[store.store_id] %}
+                                                <option value="1" selected="selected">{{ text_enabled }}</option>
+                                                <option value="0">{{ text_disabled }}</option>
+                                            {% else %}
+                                                <option value="1">{{ text_enabled }}</option>
+                                                <option value="0" selected="selected">{{ text_disabled }}</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+
+                        <div class="tab-pane" id="tab-database" >
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="input-theme">{{ entry_theme_database }}</label>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <select id="input-theme" class="form-control" name="file">
+                                            {% for key, value in database %}
+                                                <option value="{{ key }}">{{ value }}</option>
+                                            {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" id="button-import" class="btn btn-primary"><i class="fa fa-upload"></i> {{ button_import }}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Configuration of Stores
+        $('.frm-configuration').hide();
+        $('#frm-configuration-0').show();
+        $('#input-configuration-store').change(function () {
+            var store_id = $(this).val();
+            $('.frm-configuration').hide();
+            $('#frm-configuration-' + store_id).show();
+        });
+
+        // Stylesheet of Stores
+        $('.frm-stylesheet').hide();
+        $('#frm-stylesheet-0').show();
+        $('#input-stylesheet-store').change(function () {
+            var store_id = $(this).val();
+            $('.frm-stylesheet').hide();
+            $('#frm-stylesheet-' + store_id).show();
+        });
+
+        // Enable / Disable Settings
+        $('.stylesheet-settings').hide();
+        var style_selection = $('.style-status');
+        style_selection.each(function () {
+            var store_id = $(this).data('id');
+            var status = parseInt($('#input-status-' + store_id).val());
+
+            if(status === 1) {
+                $('#stylesheet-settings-' + store_id).show();
+            } else {
+                $('#stylesheet-settings-' + store_id).hide();
+            }
+        });
+
+        style_selection.change(function () {
+            var store_id = $(this).data('id');
+            var status = parseInt($('#input-status-' + store_id).val());
+
+            if(status === 1) {
+                $('#stylesheet-settings-' + store_id).show();
+            } else {
+                $('#stylesheet-settings-' + store_id).hide();
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript"><!--
+    $('#button-import').on('click', function() {
+
+        $('#form-data input[name=\'file\']').val($('#input-theme').val());
+
+        $('#form-data').submit();
+    });
+    //--></script>
+{{ footer }}

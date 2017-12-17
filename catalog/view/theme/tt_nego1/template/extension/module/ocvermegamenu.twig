@@ -1,0 +1,23 @@
+<div class="vermagemenu visible-lg visible-md">
+    <div class="content-vermagemenu"> 
+        <h2><i class="fa fa-align-justify"></i>{{ heading_title }}</h2>
+        <div class="navleft-container">
+            <div id="pt_vmegamenu" class="pt_vmegamenu">
+                {{ vermegamenu }} 
+            </div>	
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var body_class = $('body').attr('class'); 
+ if(body_class.search('common-home') != -1) {
+  $('#pt_ver_menu_home').addClass('act');
+ }
+var CUSTOMMENU_POPUP_EFFECT = {{ effect }}
+var CUSTOMMENU_POPUP_TOP_OFFSET = {{ top_offset }}
+//]]>
+        $('.vermagemenu h2').click(function () {
+            $( ".navleft-container" ).slideToggle("slow");
+        });
+</script>

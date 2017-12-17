@@ -1,0 +1,33 @@
+{% if reviews %}
+<div class="pro-tab-info pro-reviews">
+<div class="customer-review">
+<ul class="product-comments clearfix">
+<li>
+{% for review in reviews %}
+<div class="pro-reviewer-comment">
+<div class="fix">
+<div class="pull-left mbl-center">
+<h5><strong>{{ review.author }}</strong></h5>
+<p class="reply-date">{{ review.date_added }}</p>
+</div>
+</div>
+<p>{{ review.text }}</p>
+      {% for i in 1..5 %}
+      {% if review.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> {% endif %}
+      {% endfor %}
+</div>
+{% endfor %}
+</li>
+</ul>
+</div>
+</div>
+<div class="text-right">{{ pagination }}</div>
+{% else %}
+<p>{{ text_no_reviews }}</p>
+{% endif %} 
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<footer>
+	{% if block7 %}
+		{{ block7 }}
+	{% endif %}
+	<div class="container">
+	{% if block8 %}
+		{{ block8 }}
+	{% endif %}
+	</div>
+	<div class="footer-top">
+	  <div class="container">
+		<div class="row">
+			{% if block5 %}
+				{{ block5 }}
+			{% endif %}
+		</div>
+	  </div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="container-inner">
+				<div class="footer-copyright">
+					<span>{{ powered }}</span>
+				</div>
+				{% if block6 %}
+					{{ block6 }}
+				{% endif %}	
+			</div>
+		</div>
+	</div>
+	<div id="back-top"><span>{{ backtop }}</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i></div>
+</footer>
+<script type="text/javascript">
+$(document).ready(function(){
+	// hide #back-top first
+	$("#back-top").hide();
+	// fade in #back-top
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > $('body').height()/3) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-top').click(function () {
+			$('body,html').animate({scrollTop: 0}, 800);
+			return false;
+		});
+	});
+});
+</script>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</div><!-- wrapper -->
+</body></html>

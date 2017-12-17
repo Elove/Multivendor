@@ -1,0 +1,55 @@
+<div class="list-group">
+    <div class="filter-attribute-container filter-attribute-remove-container">
+        {% set is_filter = false %}
+        {% for filter_group in filter_groups %}
+            {% for filter in filter_group.filter %}
+                {% set filter_id = filter.filter_id %}
+                {% if filter.filter_id in filter_category %}
+                    {% set is_filter = true %}
+                    <div class="list-group-item filter-act-name">
+                        <p>{{ filter.e_name }}</p>
+                        <a class="a-filter remove-filter" href="javascript:void(0);" name="{{ filter_id }}"><span>Remove</span></a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% if is_filter %}
+            <div class="list-group-item filter-clear-all">
+                <a class="clear-filter" href="javascript:void(0);" onclick="oclayerednavigationajax.filter('{{ clear_action }}')">Clear all</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="filter-attribute-container filter-price">
+        <label>{{ text_byprice }}</label>
+        <div class="list-group-item">
+            <div class="filter-price">
+                <div id="slider-price"></div>
+                <div class="slider-values">
+                    <span>{{ currency_symbol_left }}</span>
+                    <input id="price-from" disabled="disabled" class="input-price" type="text" value="{{ current_min_price }}" placeholder="Min" name="price-from"/>
+                    <span>{{ currency_symbol_right }}</span> -
+                    <span>{{ currency_symbol_left }}</span>
+                    <input id="price-to" disabled="disabled" class="input-price" type="text" value="{{ current_max_price }}" placeholder="Max" name="price-to" />
+                    <span>{{ currency_symbol_right }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for filter_group in filter_groups %}
+        <div class="filter-attribute-container filter-{{ filter_group.name|lower }}">
+            <label>{{ filter_group.name }}</label>
+            <div class="list-group-item">
+                <div id="filter-group{{ filter_group.filter_group_id }}">
+                    {% for filter in filter_group.filter %}
+                        {% set filter_id = filter.filter_id %}
+                        {% if filter.filter_id in filter_category %}
+                            <!-- Not show filter attribute -->
+                        {% else %}
+                            <a class="a-filter add-filter" href="javascript:void(0);" name="{{ filter_id }}">{{ filter.name }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

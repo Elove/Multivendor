@@ -1,0 +1,67 @@
+<div id="instagram_block_home" class="block">
+	<div class="title_block">
+		<h3 >{{ heading_title }}</h3>
+	</div>
+	{% if error_connect == false %}
+		<p class="text_error_instagram">{{ text_error }}</p>
+	{% else %}
+        {% set count, rows = 0, config_slide.f_rows %}
+        {% if not rows %}
+            {% set rows = 1 %}
+        {% endif %}
+            <div class="content_block owl-carousel owl-theme">
+                {% for instagram in instagrams %}
+                    {% if count % rows == 0 %}
+                        <div class="row_items">
+                    {% endif %}
+                    {% set count = count + 1 %}
+                            <a class="fancybox {% if config_slide.f_view_mode != 'slider' %} col-xs-4 {% endif %}" href="{{ instagram.image }}" style="display: block;"><img src="{{ instagram.image }}" alt="" /></a>
+                    {% if count % rows == 0 %}
+                        </div>
+                    {% else %}
+                        {% if count == instagrams|length %}
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        {% if config_slide.f_view_mode == 'slider' %}
+        <script type="text/javascript">
+            $("#instagram_block_home .content_block").owlCarousel({
+                autoPlay: {% if config_slide.autoplay %} true {% else %} false {% endif %},
+                navSpeed : {% if config_slide.f_speed %} {{ config_slide.f_speed }} {% else %} 3000 {% endif %},
+                nav : {% if config_slide.f_show_nextback %} true {% else %} false {% endif %},
+                dots : {% if config_slide.f_show_ctr %} true {% else %} false {% endif %},
+                autoplayHoverPause : true,
+				margin: 0,
+                responsive:{
+					0:{
+						items: 2
+					},
+					480:{
+						items: 3
+					},
+					768:{
+						items: 4
+					},
+					992:{
+						items: 5
+					},
+					1200:{
+						items: {{ config_slide.items }}
+					},
+                }
+            });
+        </script>
+        {% endif %}
+        <script type="text/javascript">
+            $('.content_block').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enabled : true
+                }
+            });
+        </script>
+    {% endif %}
+</div>

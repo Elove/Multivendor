@@ -1,0 +1,152 @@
+{{ header }}
+<div id="product-manufacturer" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h1>{{ heading_title }}</h1>
+      {% if products %}
+                <div><a href="{{ compare }}" id="compare-total">{{ text_compare }}</a></div>
+				<div class="toolbar toolbar-products">
+					<div class="modes">
+						<div class="btn-group">
+							<button type="button" id="grid-view" class="btn"><i class="fa fa-th"></i></button>
+							<button type="button" id="list-view" class="btn"><i class="fa fa-th-list"></i></button>
+						</div>
+					</div>
+					<div class="toolbar-amount">
+						<span>{{ results }}</span>
+					</div>
+					<div class="sorter">
+						<label>{{ text_sort }}</label>
+						<select id="input-sort" class="form-control" onchange="location = this.value;">
+							{% for sorts in sorts %}
+								{% if sorts.value == '%s-%s'|format(sort, order) %}
+									<option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+								{% else %}
+									<option value="{{ sorts.href }}">{{ sorts.text }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+					<div class="limiter">
+						<label>{{ text_limit }}</label>
+						<select id="input-limit" class="form-control" onchange="location = this.value;">
+							{% for limits in limits %}
+								{% if limits.value == limit %}
+									<option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
+								{% else %}
+									<option value="{{ limits.href }}">{{ limits.text }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+                <div class="custom-products">
+                    <div class="row">
+					{% 	set count = 1 %}
+					{% for product in products %}
+                    <div class="product-layout product-list">
+                        <div class="product-thumb">
+							<div class="item {{ 'item' ~ count  }}">
+								<div class="item-inner">		
+									<div class="col-image">
+										<div class="image images-container">
+											<a href="{{ product.href }}" class="product-image">
+												<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+												{% if product.rotator_image %}<img class="img-r" src="{{ product.rotator_image }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />{% endif %}
+											</a>
+											{% if product.special %}
+												<div class="label-product label_sale">{{ text_label_sale }}</div>
+											{% endif %}
+											{% if product.is_new %}
+												<div class="label-product label_new">{{ text_label_new }}</div>
+											{% endif %}
+											<div class="action-links">
+												<button class="button btn-wishlist" type="button"  title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><span>{{ button_wishlist }}</span></button>
+												<button class="button btn-compare" type="button"  title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><span>{{ button_compare }}</span></button>
+												<button class="button btn-quickview" type="button"  title="{{ button_quickview }}" onclick="ocquickview.ajaxView('{{ product.href }}')"><span>{{ button_quickview }}</span></button>
+											</div>
+										</div>
+									</div>
+									<div class="col-des">
+										<div class="caption">
+											{% if product.manufacturer %}
+											<p class="manufacture-product">
+												<a href="{{ product.manufacturers }}">{{ product.manufacturer }}</a>
+											</p>
+											{% endif %}          								
+											<h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+											{% if product.rating %}
+												<div class="ratings">
+													<div class="rating-box">
+													{% for i in 0..5 %}
+														{% if product.rating == i %}
+														{% set class_r = "rating"~i %}
+														<div class="{{ class_r }}">rating</div>
+														{% endif %}
+													{% endfor %}
+													</div>
+												</div>					
+											{% endif %}
+											{% if product.price %}
+												<div class="price-box">
+												<label>{{ price_label }}</label>
+												{% if not product.special %}
+													<p class="regular-price"><span class="price">{{ product.price }}</span></p>
+												{% else %}
+													<p class="special-price"><span class="price">{{ product.special }}</span></p>
+													<p class="old-price"><span class="price">{{ product.price }}</span></p>						  
+												{% endif %}
+												{% if product.tax %}
+													<p class="price-tax"><span class="price">{{ text_tax }} {{ product.tax }}</span></p>
+												{% endif %}
+												</div>
+											{% endif %}
+											<p class="product-des">{{ product.description }}</p>
+											<button class="button btn-cart" type="button"  title="{{ button_cart }}" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}')"></i><span>{{ button_cart }}</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								$(".product-list .item{{ count }} .caption").append($('.product-list .item{{ count }} .action-links'));
+								$('#grid-view').click(function() {
+									$(".item{{ count }} .images-container").append($('.item{{ count }} .action-links'));
+								});
+								$('#list-view').click(function() {
+									$(".item{{ count }} .caption").append($('.item{{ count }} .action-links'));
+								});
+							});
+						</script>
+                    </div>
+					{% set count = count + 1 %}
+                    {% endfor %}
+					</div>
+                </div>
+                <div class="toolbar toolbar-products toolbar-bottom">
+                    <div class="toolbar-amount"><span>{{ results }}</span></div>
+					<div class="pages">{{ pagination }}</div>
+                </div>
+                {% else %}                
+				  <p>{{ text_empty }}</p>
+				  <div class="buttons">
+					<div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+				  </div>
+				  {% endif %}
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }}

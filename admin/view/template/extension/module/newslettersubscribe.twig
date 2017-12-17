@@ -1,0 +1,507 @@
+{{ header }}{{ column_left }}
+<div id="content">
+    <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-html" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+		
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+		</div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+        <li><a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a></li>
+        <?php } ?>
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              {% if error_name %}
+              <div class="text-danger">{{ error_name }}</div>
+              {% endif %}
+            </div>
+          </div>
+		  
+		  	<div class="form-group">
+				<label class="col-sm-2 control-label" for="input-status">{{ entry_popup }}</label>
+					<div class="col-sm-10">
+					 <select name="popup" id="input-popup" class="form-control">
+							{% if popup %}
+							<option value="1" selected="selected">{{ text_enabled }}</option>
+							<option value="0">{{ text_disabled }}</option>
+							{% else %}
+							<option value="1">{{ text_enabled }}</option>
+							<option value="0" selected="selected">{{ text_disabled }}</option>
+							{% endif %}
+						  </select>
+						  
+						  
+					</div>
+			</div>
+ 
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <select name="status" id="input-status" class="form-control">
+                {% if status %}
+                <option value="1" selected="selected">{{ text_enabled }}</option>
+                <option value="0">{{ text_disabled }}</option>
+                {% else %}
+                <option value="1">{{ text_enabled }}</option>
+                <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+		   <div class="row">
+			  <div class="col-sm-2">
+				 <div class="tab-pane" id="tab-module">
+					  <ul class="nav nav-pills nav-stacked" id="module">
+							<li>
+								<a href="#tab-general" class="selected"  data-toggle="tab" >{{ tab_general  }}</a>
+							</li>
+							<li>
+								<a href="#tab-list"  class="" data-toggle="tab" >{{ tab_list  }}</a>
+							</li>
+							<li>
+								<a href="#tab-mail"  data-toggle="tab" >{{ tab_mail  }}</a>
+							</li>
+						
+					  </ul>
+				  </div>
+			  </div>
+			  <div class="col-sm-10">
+				 <div class="tab-content">
+								<div class="tab-pane" id ="tab-general">
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="input-status">{{ entry_unsubscribe }}</label>
+											<div class="col-sm-10">
+											  <select name="newslettersubscribe_unsubscribe" id="input-status" class="form-control">
+												{% if status %}
+												<option value="1" selected="selected">{{ text_enabled }}</option>
+												<option value="0">{{ text_disabled }}</option>
+												{% else %}
+												<option value="1">{{ text_enabled }}</option>
+												<option value="0" selected="selected">{{ text_disabled }}</option>
+												{% endif %}
+											  </select>
+											</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="input-status">{{ entry_mail }}</label>
+											<div class="col-sm-10">
+											  <select name="newslettersubscribe_mail_status" id="input-status" class="form-control">
+												{% if status %}
+												<option value="1" selected="selected">{{ text_enabled }}</option>
+												<option value="0">{{ text_disabled }}</option>
+												{% else %}
+												<option value="1">{{ text_enabled }}</option>
+												<option value="0" selected="selected">{{ text_disabled }}</option>
+												{% endif %}
+											  </select>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-status">{{ entry_thickbox }}</label>
+												<div class="col-sm-10">
+												  <select name="newslettersubscribe_thickbox" id="input-status" class="form-control">
+													{% if status %}
+													<option value="1" selected="selected">{{ text_enabled }}</option>
+													<option value="0">{{ text_disabled }}</option>
+													{% else %}
+													<option value="1">{{ text_enabled }}</option>
+													<option value="0" selected="selected">{{ text_disabled }}</option>
+													{% endif %}
+												  </select>
+												</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-status">{{ entry_registered }}</label>
+												<div class="col-sm-10">
+												  <select name="newslettersubscribe_registered" id="input-status" class="form-control">
+													{% if status %}
+													<option value="1" selected="selected">{{ text_enabled }}</option>
+													<option value="0">{{ text_disabled }}</option>
+													{% else %}
+													<option value="1">{{ text_enabled }}</option>
+													<option value="0" selected="selected">{{ text_disabled }}</option>
+													{% endif %}
+												  </select>
+												</div>
+										</div>
+								</div>
+								<div class="tab-pane" id ="tab-list">
+									<div class="table-responsive">
+									<table class="table table-bordered table-hover">
+										<thead>
+											<thead>
+												<tr>
+													<td class="left"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+													<td class="left">No</td>
+													<td class="left">Email</td>
+													<td class="left">Name</td>
+													<td class="right">Action</td>
+												</tr>
+											</thead>
+											<tbody>
+												{% if users %}
+													{% for key,user  in users %}
+												<tr>
+													<td class="left">
+													{% if user['selected'] %}
+														<input type="checkbox" name="selected[]" value="{{ user['id']  }}" checked="checked" />
+															{% else %}
+														<input type="checkbox" name="selected[]" value="{{ user['id']  }}" />
+															{% endif %}
+													</td>
+													<td class="left">{{ page_nav+ key  +1  }}</td>
+													<td class="left">{{ user['email_id']  }}</td>
+													<td class="left">{{ user['name']  }}</td>
+													<td class="right">
+													{% for action in user['action'] %}
+													 [ <a href="{{ action['href']  }}">{{ action['text']  }}</a> ]
+													{% endfor %}
+													</td>
+												</tr>
+												{% endfor %}
+													{% else %}
+												<tr>
+												  <td class="center" colspan="8">{{ text_no_results  }}</td>
+												</tr>
+												{% endif %}
+											</tbody>
+									</table>
+									<div class="pagination">{{ pagination  }}</div>
+									</div>
+								</div>
+								
+								<div class="tab-pane" id ="tab-mail">
+											<div class="table-responsive">
+												<table id="mail"  class="table table-bordered table-hover">
+												  <tr>
+													<td>{{ entry_store  }}</td>
+													<td><select name="store_id">
+														<option value="0">{{ text_default  }}</option>
+														{% for store in stores %}
+														<option value="{{ store['store_id']  }}">{{ store['name']  }}</option>
+															{% endfor %}
+													  </select></td>
+												  </tr>
+												  <tr>
+													<td>{{ entry_to  }}</td>
+													<td><select name="to">
+														<option value="sendall">{{ text_sendall  }}</option>
+														<option value="newsletter">{{ text_newsletter  }}</option>
+														<option value="lbnewsletter">{{ text_lbnewsletter  }}</option>
+														<option value="customer_all">{{ text_customer_all  }}</option>
+														<option value="customer_group">{{ text_customer_group  }}</option>
+														<option value="affiliate_all">{{ text_affiliate_all  }}</option>
+													  </select></td>
+												  </tr>
+												  <tbody id="to-customer-group" class="to">
+													<tr>
+													  <td>{{ entry_customer_group  }}</td>
+													  <td><select name="customer_group_id">
+													
+														  {% for customer_group in customer_groups %}
+														  <option value="{{ customer_group['customer_group_id']  }}">{{ customer_group['name']  }}</option>
+														 {% endfor %}
+														</select></td>
+													</tr>
+												  </tbody>
+												  <tbody id="to-customer" class="to">
+													<tr>
+													  <td>{{ entry_customer  }}</td>
+													  <td><input type="text" name="customers" value="" /></td>
+													</tr>
+													<tr>
+													  <td>&nbsp;</td>
+													  <td><div id="customer" class="scrollbox"></div></td>
+													</tr>
+												  </tbody>
+												  <tbody id="to-affiliate" class="to">
+													<tr>
+													  <td>{{ entry_affiliate  }}</td>
+													  <td><input type="text" name="affiliates" value="" /></td>
+													</tr>
+													<tr>
+													  <td>&nbsp;</td>
+													  <td><div id="affiliate" class="scrollbox"></div></td>
+													</tr>
+												  </tbody>
+												  <tbody id="to-product" class="to">
+													<tr>
+													  <td>{{ entry_product  }}</td>
+													  <td><input type="text" name="products" value="" /></td>
+													</tr>
+													<tr>
+													  <td>&nbsp;</td>
+													  <td><div id="product" class="scrollbox"></div></td>
+													</tr>
+												  </tbody>
+												  <tr>
+													<td><span class="required">*</span> {{ entry_subject  }}</td>
+													<td><input type="text" name="subject" value="" /></td>
+												  </tr>
+												  <tr>
+													<td><span class="required">*</span> {{ entry_message  }}</td>
+													<td><textarea id="input-description" class="form-control" placeholder="Email Message Content" rows="10" cols="100" name="message"></textarea>
+														<a id="button-send"  class="btn btn-default" onclick="send('index.php?route=extension/module/newslettersubscribe/send&user_token={{ user_token }}');" class="button">{{ button_send }}</a>
+													</td>
+													
+												  </tr>
+												
+												</table>
+											</div>
+										
+									
+								</div>
+								
+							
+								
+				</div>
+			  </div>
+		   
+		   
+		   </div>
+		  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/summernote-image-attributes.js"></script>
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+ <script type="text/javascript"><!--
+function addModule() {
+	var user_token = Math.random().toString(36).substr(2);
+			
+	html  = '<tr id="module-row' + user_token + '">';
+	html += '  <td class="text-right">' + ($('tbody tr').length + 1) + '</td>';
+	html += '  <td class="text-left"><input type="text" name="newslettersubscribe_module[' + user_token + '][limit]" value="5" placeholder="{{ entry_limit  }}" class="form-control" /></td>';
+	html += '  <td class="text-left"><input type="text" name="newslettersubscribe_module[' + user_token + '][width]" value="200" placeholder="{{ entry_width  }}" class="form-control" /> <input type="text" name="newslettersubscribe_module[' + user_token + '][height]" value="200" placeholder="{{ entry_height  }}" class="form-control" /></td>';	
+	html += '  <td class="text-left"><button type="button" onclick="$(\'#module-row' + user_token + '\').remove();" data-toggle="tooltip" title="{{ button_remove  }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+	html += '</tr>';
+	
+	$('#module tbody').append(html);
+}
+//--></script></div> 
+<script  type ="text/javascript">
+	$('#module li:first-child a').tab('show');
+	$('#input-description').summernote({
+		height: 300
+	});
+</script> 
+<script type="text/javascript"><!--	
+$('select[name=\'to\']').bind('change', function() {
+	$('#mail .to').hide();
+	$('#mail #to-' + $(this).val().replace('_', '-')).show();
+	
+});
+
+$('select[name=\'to\']').trigger('change');
+//--></script> 
+<script type="text/javascript"><!--
+$.widget('custom.catcomplete', $.ui.autocomplete, {
+	_renderMenu: function(ul, items) {
+		var self = this, currentCategory = '';
+		
+		$.each(items, function(index, item) {
+			if (item.category != currentCategory) {
+				ul.append('<li class="ui-autocomplete-category">' + item.category + '</li>');
+				
+				currentCategory = item.category;
+			}
+			
+			self._renderItemData (ul, item);
+		});
+	}
+});
+
+$('input[name=\'customers\']').catcomplete({
+	delay: 500,
+	source: function(request, response) {
+		$.ajax({
+			url: 'index.php?route=sale/customer/autocomplete&user_token={{ user_token  }}&filter_name=' +  encodeURIComponent(request.term),
+			dataType: 'json',
+			success: function(json) {	
+				response($.map(json, function(item) {
+					return {
+						category: item.customer_group,
+						label: item.name,
+						value: item.customer_id
+					}
+				}));
+			}
+		});
+		
+	}, 
+	select: function(event, ui) {
+		$('#customer' + ui.item.value).remove();
+		
+		$('#customer').append('<div id="customer' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="customer[]" value="' + ui.item.value + '" /></div>');
+
+		$('#customer div:odd').attr('class', 'odd');
+		$('#customer div:even').attr('class', 'even');
+				
+		return false;
+	},
+	focus: function(event, ui) {
+      	return false;
+   	}
+});
+
+$('#customer div img').bind('click', function() {
+	$(this).parent().remove();
+	
+	$('#customer div:odd').attr('class', 'odd');
+	$('#customer div:even').attr('class', 'even');	
+});
+//--></script> 
+<script type="text/javascript"><!--	
+$('input[name=\'affiliates\']').autocomplete({
+	delay: 500,
+	source: function(request, response) {
+		$.ajax({
+			url: 'index.php?route=sale/affiliate/autocomplete&user_token={{ user_token  }}&filter_name=' +  encodeURIComponent(request.term),
+			dataType: 'json',
+			success: function(json) {		
+				response($.map(json, function(item) {
+					return {
+						label: item.name,
+						value: item.affiliate_id
+					}
+				}));
+			}
+		});
+		
+	}, 
+	select: function(event, ui) {
+		$('#affiliate' + ui.item.value).remove();
+		
+		$('#affiliate').append('<div id="affiliate' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="affiliate[]" value="' + ui.item.value + '" /></div>');
+
+		$('#affiliate div:odd').attr('class', 'odd');
+		$('#affiliate div:even').attr('class', 'even');
+				
+		return false;
+	},
+	focus: function(event, ui) {
+      	return false;
+   	}
+});
+
+$('#affiliate div img').bind('click', function() {
+	$(this).parent().remove();
+	
+	$('#affiliate div:odd').attr('class', 'odd');
+	$('#affiliate div:even').attr('class', 'even');	
+});
+
+$('input[name=\'products\']').autocomplete({
+	delay: 500,
+	source: function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token  }}&filter_name=' +  encodeURIComponent(request.term),
+			dataType: 'json',
+			success: function(json) {		
+				response($.map(json, function(item) {
+					return {
+						label: item.name,
+						value: item.product_id
+					}
+				}));
+			}
+		});
+	}, 
+	select: function(event, ui) {
+		$('#product' + ui.item.value).remove();
+		
+		$('#product').append('<div id="product' + ui.item.value + '">' + ui.item.label + '<img src="view/image/delete.png" alt="" /><input type="hidden" name="product[]" value="' + ui.item.value + '" /></div>');
+
+		$('#product div:odd').attr('class', 'odd');
+		$('#product div:even').attr('class', 'even');
+				
+		return false;
+	},
+	focus: function(event, ui) {
+      	return false;
+   	}
+});
+
+$('#product div img').bind('click', function() {
+	$(this).parent().remove();
+	
+	$('#product div:odd').attr('class', 'odd');
+	$('#product div:even').attr('class', 'even');	
+});
+
+function send(url) { 
+	
+	$.ajax({
+		url: url,
+		type: 'post',
+		data: $('#form-html').serialize(),		
+		dataType: 'json',
+		beforeSend: function() {
+			$('#button-send').attr('disabled', true);
+			$('#button-send').before('<span class="wait"><img src="view/image/loading.gif" alt="" />&nbsp;</span>');
+		},
+		complete: function() {
+			$('#button-send').attr('disabled', false);
+			//$('.wait').html('Sent mail successfully');
+		},				
+		success: function(json) {
+			$('.success, .warning, .error').remove();
+			
+			if (json['error']) {
+				if (json['error']['warning']) {
+					$('.box').before('<div class="warning" style="display: none;">' + json['error']['warning'] + '</div>');
+			
+					$('.warning').fadeIn('slow');
+				}
+				
+				if (json['error']['subject']) {
+					$('input[name=\'subject\']').after('<span class="error">' + json['error']['subject'] + '</span>');
+				}	
+				
+				if (json['error']['message']) {
+					$('textarea[name=\'message\']').parent().append('<span class="error">' + json['error']['message'] + '</span>');
+				}									
+			}			
+			
+			if (json['next']) {
+				if (json['success']) {
+					$('.box').before('<div class="success">' + json['success'] + '</div>');
+					
+					send(json['next']);
+				}		
+			} else {
+				if (json['success']) {
+					$('.box').before('<div class="success" style="display: none;">' + json['success'] + '</div>');
+			
+					$('.success').fadeIn('slow');
+				}					
+			}				
+		}
+	});
+}
+//--></script>
+{{ footer }}

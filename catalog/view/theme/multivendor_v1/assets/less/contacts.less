@@ -1,0 +1,127 @@
+@import "presets.less";
+
+.form-control{	
+	background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    color: #2d2d2d;
+    display: block;
+    height: 48px;
+    box-shadow: none;
+    width: 100%;
+}
+.form-control:focus,
+textarea:focus{
+	box-shadow: none;
+	border: 1px solid @preset;
+	outline: none;
+}
+.contact-info{
+    margin-bottom: 42px;
+    .header-wrap{
+        margin: 40px 0;
+        h3{
+            font-size: 40px;
+        }
+    }
+    .contact-item-wrapper{
+        padding: 0px 42px;
+        h4{
+            font-size: 22px;
+        font-weight: 400;
+        color: #0C0C0C;
+        margin-bottom: 20px;
+        }
+        .info{
+            .icon{
+                float: left;
+                width: 42px;
+                font-size: 30px;
+                height: 42px;
+                line-height: 48px;
+                color: @preset;
+            }
+        }
+    }
+}
+//Login & Register Form
+.login-form-container{
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 37px 40px;
+    text-align: left;  
+    .login-text{
+        text-align: center;
+        margin-bottom: 30px;
+        h3{
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+    }
+}
+.login-form-container{
+    input[type="checkbox"]{
+        height: 15px;
+        margin: 0;
+        position: relative;
+        top: 1px;
+        width: 17px;
+    }
+    label {
+        color: #333;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        vertical-align: middle;
+    }
+}
+.button-box{
+    .login-toggle-btn{
+        padding-top: 20px;
+        a{
+            float: right;
+            -webkit-transition: all 0.2s ease 0s;
+            -moz-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+    }
+    .log-btn{
+        margin-top: 20px;
+    }
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret{
+    position: relative;
+}
+.bootstrap-select > .dropdown-toggle{
+    color: #2d2d2d;
+    padding: 16px 20px 15px;
+    text-transform: capitalize;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.has-error .form-control:focus{
+    box-shadow: none;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+    opacity: 1;
+}
+.form-control-static{
+    text-align: center;
+    line-height: 34px;
+}
+.form-inline .checkbox input[type="checkbox"], .form-inline .radio input[type="radio"]{
+    margin-right: 5px;
+}
+.input-group-addon{
+    padding: 0px;
+    background-color: transparent; 
+    border: none;
+}
+.addon {
+    font-size: 20px;
+    color: #888;
+    border-radius: 0px;
+    width: 32px !important;
+}
+.bootstrap-select > .dropdown-toggle{
+    padding: 16px 18px 10px;
+}

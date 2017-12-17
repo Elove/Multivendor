@@ -1,0 +1,167 @@
+{% if status %}
+	{% if exist_fcate %}
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".featured-categorytab .tab_content_category").hide();
+				$(".featured-categorytab .tab_content_category:first").show();
+				$(".featured-category .tabs-featured:first").addClass("active");
+				$(".featured-categorytab div.featured-category div").click(function() {
+					$("div.featured-category div").removeClass("active");
+					$(this).addClass("active");
+					$(".featured-categorytab .tab_content_category").hide();
+					$(".featured-categorytab .tab_content_category").removeClass("animate1 {{ tab_effect }}");
+					var activeTab = $(this).attr("rel");
+					$(".featured-categorytab #" + activeTab).addClass("animate1 {{ tab_effect }}");
+					$(".featured-categorytab #" + activeTab).fadeIn();
+				});
+			});
+		</script>
+        {% set row = config_slide.f_rows %}
+        {% if not row %}
+            {% set row = 1 %}
+        {% endif %}
+<div class="product-tabs-category-container-slider featured-categorytab">
+	<div class="featured-category-title modules-title">
+		<h2>{{ heading_title }}</h2>
+	</div>
+	<div class="featured-category-icon">
+		<div class="row">
+			<div class="featured-category">
+				{% set count = 0 %}
+				{% for category in categories %}
+					<div class="tabs-featured  tab_cate{{ category.category_id }}" rel="tab_fcate{{ category.category_id }}">
+						<div>
+							{% if category.homethumb_image %}
+								<img class="image" src="{{ category.homethumb_image }}" alt="" />
+							{% endif %}
+							{% if category.thumbnail_image %}
+								<img class="imagehover" src="{{ category.thumbnail_image }}" alt="" />
+							{% endif %}
+							<span>{{ category.name }}</span>
+						</div>
+					</div>
+					{% set count = count + 1 %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="tab_featured_category">
+		<div class="row">
+		{% for category in categories %}
+		<div id="tab_fcate{{ category.category_id }}" class="tab_content_category">
+			{% if category.products %}
+				<div class="productTabContent owl-demo-tabcate">
+					{% set products, i = category.products, 0 %}
+					{% for product in products %}
+						{% if i % row == 0 %}<div class='row_item'>{% endif %}
+						{% set i = i + 1 %}
+						<div class="item">
+							{% if config_slide.showlabel %}
+                                {% if product.is_new %}
+                                    {% if product.special %}
+										<div class="label-pro-sale">{{ text_sale }}</div>
+                                    {% else %}
+										<div class="label-pro-new">{{ text_new }}</div>
+                                    {% endif %}
+                                {% else %}
+                                    {% if product.special %}
+										<div class="label-pro-sale">{{ text_sale }}</div>
+                                    {% endif %}
+                                {% endif %}
+							{% endif %}
+							<div class="item-inner">
+								<div class="products-images">
+										<div class="image"><a href="{{ product.href }}"><img class="image1" src="{{ product.thumb }}" alt="{{ product.name }}" />
+										{% if product.rotator_image %}
+											<img class="image2" src="{{ product.rotator_image }}" alt="" />
+										{% endif %}
+										</a></div>
+								</div>
+								<div class="box-content">
+									<div class="name"><a href="{{ product.href }}">{{ product.name }}</a></div>
+									{% if config_slide.showdes %}
+										<p>{{ product.description }}</p>
+									{% endif %}
+									{% if product.rating %}
+										<div class="rating"><img src="catalog/view/theme/default/image/stars-{{ product.rating }}.png" alt="{{ product.reviews }}" /></div>
+									{% endif %}
+									{% if config_slide.showprice %}
+										{% if product.price %}
+											<div class="price">
+												{% if not product.special %}
+													{{ product.price }}
+												{% else %}
+													<span class="price-old">{{ product.price }}</span> <span class="price-new">{{ product.special }}</span>
+												{% endif %}
+											</div>
+										{% endif %}
+									{% endif %}
+								</div>
+								<div class="item-hover">
+									<div class="actions">
+										<div class="button-group">
+											<div class="cart">
+												{% if config_slide.showaddtocart %}
+													<div class="cart">
+													<button type="button" title="{{ button_cart }}" onclick="cart.add('{{ product.product_id }}');"><span>{{ button_cart }}</span></button>
+													</div>
+												{% endif %}
+											</div>
+											<div class="add-to-links">
+												<div class="wishlist">
+													<button type="button" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><span>{{ button_wishlist }}</span></button>
+												</div>
+												<div class="compare">
+													<button type="button" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><span>{{ button_compare }}</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+						{% if (i % row == 0) or (i == products|length) %}</div>{% endif %}
+					{% endfor %}
+				</div>
+			{% else %}
+				<p>{{ text_empty_products }}</p>
+			{% endif %}
+		</div>
+		{% endfor %}
+		</div>
+	</div> <!-- .tab_container_category -->
+</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".featured-categorytab .owl-demo-tabcate").owlCarousel ({
+					autoPlay: {% if config_slide.autoplay %} true {% else %} false {% endif %},
+					items : {% if config_slide.items %} {{ config_slide.items }} {% else %} 4 {% endif %},
+					slideSpeed : {% if config_slide.speed %} {{ config_slide.speed }} {% else %} 3000 {% endif %},
+					navigation : {% if config_slide.shownextback %} true {% else %} false {% endif %},
+					paginationNumbers : true,
+					pagination : {% if config_slide.shownav %} true {% else %} false {% endif %},
+					stopOnHover : false,
+					itemsDesktop : [1199,5],
+					itemsDesktopSmall : [991,2],
+					itemsTablet: [680,2],
+					itemsMobile : [460,1]
+				});
+				$(".featured-categorytab .featured-category").owlCarousel ({
+					autoPlay: {% if config_slide.autoplay %} true {% else %} false {% endif %},
+					items : {% if config_slide.items %} {{ config_slide.items }} {% else %} 4 {% endif %},
+					slideSpeed : {% if config_slide.speed %} {{ config_slide.speed }} {% else %} 3000 {% endif %},
+					navigation : {% if config_slide.shownextback %} true {% else %} false {% endif %},
+					paginationNumbers : true,
+					pagination : {% if config_slide.shownav %} true {% else %} false {% endif %},
+					stopOnHover : false,
+					itemsDesktop : [1199,5],
+					itemsDesktopSmall : [991,3],
+					itemsTablet: [680,2],
+					itemsMobile : [460,1]
+				});
+			});
+		</script>
+	{% else %}
+		<p class="category-not">{{ text_empty_categories }}</p>
+	{% endif %}
+{% endif %}

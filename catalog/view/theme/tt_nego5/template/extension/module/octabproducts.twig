@@ -1,0 +1,438 @@
+<div class="tt_tabsproduct_module{% if config_module.row >=2 %}{{' multi-rows'}}{% endif %} {{ config_module.class }}" id="product_module{{ config_module.module_id }}">
+	<div class="module-title">
+	  <h2>
+		{% if config_module.title_lang[code].title %}
+		  {{ config_module.title_lang[code].title }}
+		{% else %}
+		  {{ heading_title }}
+		{% endif %}
+	  </h2>
+	  {% if module_description %}
+		<div class="module-description">
+		  {{ module_description }}
+		</div>
+	  {% endif %}
+	  <ul class="tab-heading tabs-categorys">
+      {% set i= 0 %}
+      {% for octab in octabs %}
+        <li><a data-toggle="pill" href="#tab-{{ config_module.module_id }}{{ i }}">{{ octab.title }}</a></li>
+        {% set i= i +1  %}
+      {% endfor %}
+	</ul>
+  </div>
+  {% if config_module.slider %}
+	{% set class_slider = ' owl-carousel owl-theme '%}
+  {% else %}
+	{% set class_slider = ''%}
+  {% endif %}
+  {% if config_module.nrow == 0 %}
+	{% set class = 'two_items col-lg-6 col-md-6 col-sm-6 col-xs-12' %}	
+  {% elseif config_module.nrow == 1 %}
+	{% set class = 'three_items col-lg-4 col-md-4 col-sm-4 col-xs-12' %}
+  {% elseif config_module.nrow == 2 %}
+	{% set class = 'four_items col-lg-3 col-md-3 col-sm-3 col-xs-12' %}
+  {% else %}
+	{% set class = 'six_items col-lg-2 col-md-2 col-sm-2 col-xs-12' %}
+  {% endif %}
+  <div class="tt-product">
+    <div class="tab-content">
+		{% set i= 0 %}	  
+		{% if config_module.row %}
+			{% set rows = config_module.row %}
+		{% else %}
+			{% set rows = 1 %}
+		{% endif %}		
+	{% for octab in octabs %}
+	{% set count, count_i = 0, 0 %}
+	{% set items_numb, items_gnumb = 3, 6 %}
+	<div class="tab-container-{{ config_module.module_id }} {{ class_slider }} tab-pane fade" id="tab-{{ config_module.module_id }}{{ i }}">		
+	{% if octab.products|length > 0 %}
+        {% for product in octab.products %}
+            <!-- Grid -->
+			{% if config_module.type == 0 %}	
+			{% if count % rows == 0 %}
+			<div class="row_items {% if not config_module.slider %}{{ class }}{% endif %}">
+			{% endif %}
+			{% set count = count + 1 %}
+				<div class="product-layout grid-style ">
+					<div class="product-thumb transition">
+						<div class="item">
+							<div class="item-inner">
+								<div class="image images-container">
+									<a href="{{ product.href }}" class="product-image">
+										{% if config_module.rotator and product.rotator_image %}<img class="img-r" src="{{ product.rotator_image }}" alt="{{ product.name }}" />{% endif %}
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+									</a>				  
+									{% if config_module.salelabel %}
+										{% if product.special %}
+										<div class="label-product label_sale">{{ text_label_sale }}</div>
+										{% endif %}
+									{% endif %}
+									{% if config_module.newlabel %}
+										{% if product.is_new %}
+										<div class="label-product label_new">{{ text_label_new }}</div>
+										{% endif %}
+									{% endif %}
+									{% if  config_module.showquickview or config_module.showwishlist or  config_module.showcompare %}	
+										<div class="action-links">
+											{% if config_module.showwishlist %}
+												<button class="button btn-wishlist" type="button"  title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><span>{{ button_wishlist }}</span></button>
+											{% endif %}
+											{% if config_module.showcompare %}
+												<button class="button btn-compare" type="button"  title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><span>{{ button_compare }}</span></button>
+											{% endif %}
+											{% if use_quickview %}
+												{% if config_module.showquickview %}
+													<button class="button btn-quickview" type="button"  title="{{ button_quickview }}" onclick="ocquickview.ajaxView('{{ product.href }}')"><span>{{ button_quickview }}</span></button>
+												{% endif %}
+											{% endif %}
+										</div>
+									{% endif %}
+									{% if config_module.countdown %}<div id="Countdown{{ product.product_id }}-{{ i }}" class="box-timer"></div> {% endif %}
+								</div><!-- image -->
+								<div class="caption">
+									{% if product.manufacturer %}
+									<p class="manufacture-product">
+										<a href="{{ product.manufacturers }}">{{ product.manufacturer }}</a>
+									</p>
+									{% endif %}
+									<h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+									{% if product.rating %}
+										<div class="ratings">
+											<div class="rating-box">
+											{% for i in 0..5 %}
+												{% if product.rating == i %}
+												{% set class_r = "rating"~i %}
+												<div class="{{ class_r }}">rating</div>
+												{% endif %}
+											{% endfor %}
+											</div>
+										</div>					
+									{% endif %}
+									{% if use_catalog %}
+									{% if product.price %}
+										<div class="price-box">
+										<label>{{ price_label }}</label>
+										{% if not product.special %}
+											<p class="regular-price"><span class="price">{{ product.price }}</span></p>
+										{% else %}
+											<p class="special-price"><span class="price">{{ product.special }}</span></p>
+											<p class="old-price"><span class="price">{{ product.price }}</span></p>						  
+										{% endif %}
+										{% if product.tax %}
+											<p class="price-tax"><span class="price">{{ text_tax }} {{ product.tax }}</span></p>
+										{% endif %}
+										</div>
+									{% endif %}
+									{% endif %}
+									{% if use_catalog %}
+										{% if config_module.showcart %}
+											<button class="button btn-cart" type="button"  title="{{ button_cart }}" onclick="cart.add('{{ product.product_id }}');"><span>{{ button_cart }}</span></button>
+										{% endif %}
+									{% endif %}
+									{% if config_module.description %}
+										<p class="product-des">{{ product.description }}</p>
+									{% endif %}
+								</div><!-- caption -->
+							</div>
+						</div>
+					</div><!-- product-thumb -->
+						{% if product.date_end and config_module.countdown %}
+						<script type="text/javascript">
+						$(document).ready(function () {
+						$('#Countdown{{ product.product_id }}-{{ i }}').countdown({
+						until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+						labels: ['{{ text_years }}', '{{ text_months }} ', '{{ text_weeks }}', '{{ text_days }}', '{{ text_hrs }}', '{{ text_mins }}', '{{ text_secs }}'],
+						labels1: ['{{ text_year }}', '{{ text_month }} ', '{{ text_week }}', '{{ text_day }}', '{{ text_hr }}', '{{ text_min }}', '{{ text_sec }}'],
+						});
+						 //$('#Countdown{{ product.product_id }}-{{ i }}').countdown('pause');
+						});
+						</script>
+						{% endif %}
+				</div><!-- product-layout -->
+				{% if (count % rows == 0) or (count == octab.products|length) %}
+				</div>
+				{% endif %}
+            {% elseif config_module.type == 1 %}
+            <!-- List -->
+			{% if count % rows == 0 %}
+			<div class="row_items {% if not config_module.slider %}{{ class }}{% endif %}">
+			{% endif %}
+			{% set count = count + 1 %}
+				<div class="product-layout list-style ">
+					<div class="product-thumb transition">
+						<div class="item">
+							<div class="item-inner">
+								<div class="image images-container">
+									<a href="{{ product.href }}" class="product-image">
+										{% if config_module.rotator and product.rotator_image %}<img class="img-r" src="{{ product.rotator_image }}" alt="{{ product.name }}" />{% endif %}
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+									</a>				  
+									{% if config_module.salelabel %}
+										{% if product.special %}
+										<div class="label-product label_sale">{{ text_label_sale }}</div>
+										{% endif %}
+									{% endif %}
+									{% if config_module.newlabel %}
+										{% if product.is_new %}
+										<div class="label-product label_new">{{ text_label_new }}</div>
+										{% endif %}
+									{% endif %}
+									{% if use_quickview %}
+										{% if config_module.showquickview %}
+											<button class="button btn-quickview" type="button"  title="{{ button_quickview }}" onclick="ocquickview.ajaxView('{{ product.href }}')"><span>{{ button_quickview }}</span></button>
+										{% endif %}
+									{% endif %}
+								</div><!-- image -->
+								<div class="caption">
+									{% if product.manufacturer %}
+									<p class="manufacture-product">
+										<a href="{{ product.manufacturers }}">{{ product.manufacturer }}</a>
+									</p>
+									{% endif %}
+									<h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4> 
+									{% if product.rating %}
+									<div class="ratings">
+										<div class="rating-box">
+										{% for i in 0..5 %}
+											{% if product.rating == i %}
+											{% set class_r = "rating"~i %}
+											<div class="{{ class_r }}">rating</div>
+											{% endif %}
+										{% endfor %}
+										</div>
+									</div>					
+									{% endif %}          
+									{% if use_catalog %}
+									{% if product.price %}
+										<div class="price-box">
+										<label>{{ price_label }}</label>
+										{% if not product.special %}
+											<p class="regular-price"><span class="price">{{ product.price }}</span></p>
+										{% else %}
+											<p class="special-price"><span class="price">{{ product.special }}</span></p>
+											<p class="old-price"><span class="price">{{ product.price }}</span></p>						  
+										{% endif %}
+										{% if product.tax %}
+											<p class="price-tax"><span class="price">{{ text_tax }} {{ product.tax }}</span></p>
+										{% endif %}
+										</div>
+									{% endif %}
+									{% endif %}
+									{% if config_module.description %}
+									<p class="product-des">{{ product.description }}</p>
+									{% endif %}
+									{% if config_module.countdown %}<div id="Countdown{{ product.product_id }}-{{ i }}" class="box-timer"></div> {% endif %}
+									{% if config_module.showcart or config_module.showwishlist or  config_module.showcompare %}		
+										<div class="action-links">
+											{% if use_catalog %}
+												{% if config_module.showcart %}
+													<button class="button btn-cart" type="button"  title="{{ button_cart }}" onclick="cart.add('{{ product.product_id }}');"><span>{{ button_cart }}</span></button>
+												{% endif %}
+											{% endif %}
+											{% if config_module.showwishlist %}
+												<button class="button btn-wishlist" type="button"  title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><span>{{ button_wishlist }}</span></button>
+											{% endif %}
+											{% if config_module.showcompare %}
+												<button class="button btn-compare" type="button"  title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><span>{{ button_compare }}</span></button>
+											{% endif %}
+										</div>
+									{% endif %}
+								</div><!-- caption -->
+							</div>
+						</div>
+					</div><!-- product-thumb -->
+						{% if product.date_end and config_module.countdown %}
+						<script type="text/javascript">
+						$(document).ready(function () {
+						$('#Countdown{{ product.product_id }}-{{ i }}').countdown({
+						until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+						labels: ['{{ text_years }}', '{{ text_months }} ', '{{ text_weeks }}', '{{ text_days }}', '{{ text_hrs }}', '{{ text_mins }}', '{{ text_secs }}'],
+						labels1: ['{{ text_year }}', '{{ text_month }} ', '{{ text_week }}', '{{ text_day }}', '{{ text_hr }}', '{{ text_min }}', '{{ text_sec }}'],
+						});
+						//$('#Countdown{{ product.product_id }}-{{ i }}').countdown('pause');
+						});
+						</script>
+						{% endif %}
+				</div><!-- product-layout -->
+				{% if (count % rows == 0) or (count == octab.products|length) %}
+				</div>
+				{% endif %}
+            {% else %}
+            <!-- other type -->
+			{% if count % rows == 0 %}
+			<div class="row_items {% if not config_module.slider %}{{ class }}{% endif %}">
+			{% endif %}
+			{% set count = count + 1 %}
+				<div class="product-layout product-customize  {{ ((count % items_gnumb == 1) or (count % items_gnumb == 0)) ? 'list-style' }}">
+					<div class="product-thumb transition ">
+						<div class="item">
+							<div class="item-inner">
+								<div class="caption caption-top">
+									<h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+									{% if product.rating %}
+										<div class="ratings">
+											<div class="rating-box">
+											{% for i in 0..5 %}
+												{% if product.rating == i %}
+												{% set class_r = "rating"~i %}
+												<div class="{{ class_r }}">rating</div>
+												{% endif %}
+											{% endfor %}
+											</div>
+										</div>					
+									{% endif %}									
+								</div>
+								<div class="image images-container">
+									<a href="{{ product.href }}" class="product-image">
+										{% if config_module.rotator and product.rotator_image %}<img class="img-r" src="{{ product.rotator_image }}" alt="{{ product.name }}" />{% endif %}
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+									</a>				  
+									{% if config_module.salelabel %}
+										{% if product.special %}
+										<div class="label-product label_sale">{{ text_label_sale }}</div>
+										{% endif %}
+									{% endif %}
+									{% if config_module.newlabel %}
+										{% if product.is_new %}
+										<div class="label-product label_new">{{ text_label_new }}</div>
+										{% endif %}
+									{% endif %}
+									{% if use_quickview %}
+										{% if config_module.showquickview %}
+											<button class="button btn-quickview" type="button"  title="{{ button_quickview }}" onclick="ocquickview.ajaxView('{{ product.href }}')"><span>{{ button_quickview }}</span></button>
+										{% endif %}
+									{% endif %}
+								</div><!-- image -->
+								<div class="caption">
+									{% if product.manufacturer %}
+									<p class="manufacture-product">
+										<a href="{{ product.manufacturers }}">{{ product.manufacturer }}</a>
+									</p>
+									{% endif %}
+									{% if use_catalog %}
+									{% if product.price %}
+										<div class="price-box">
+										<label>{{ price_label }}</label>
+										{% if not product.special %}
+											<p class="regular-price"><span class="price">{{ product.price }}</span></p>
+										{% else %}
+											<p class="special-price"><span class="price">{{ product.special }}</span></p>
+											<p class="old-price"><span class="price">{{ product.price }}</span></p>						  
+										{% endif %}
+										{% if product.tax %}
+											<p class="price-tax"><span class="price">{{ text_tax }} {{ product.tax }}</span></p>
+										{% endif %}
+										</div>
+									{% endif %}
+									{% endif %}
+									{% if config_module.countdown %}<div id="Countdown{{ product.product_id }}-{{ i }}" class="box-timer"></div> {% endif %}
+									{% if config_module.showcart or config_module.showwishlist or  config_module.showcompare %}	
+										<div class="action-links">
+											{% if use_catalog %}
+												{% if config_module.showcart %}
+													<button class="button btn-cart" type="button"  title="{{ button_cart }}" onclick="cart.add('{{ product.product_id }}');"><span>{{ button_cart }}</span></button>
+												{% endif %}
+											{% endif %}
+											{% if config_module.showwishlist %}
+												<button class="button btn-wishlist" type="button"  title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><span>{{ button_wishlist }}</span></button>
+											{% endif %}
+											{% if config_module.showcompare %}
+												<button class="button btn-compare" type="button"  title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><span>{{ button_compare }}</span></button>
+											{% endif %}
+										</div>
+									{% endif %}
+									{% if config_module.description %}
+										<p class="product-des">{{ product.description }}</p>
+									{% endif %}
+								</div><!-- caption -->
+							</div>
+						</div>
+					</div><!-- product-thumb -->
+						{% if product.date_end and config_module.countdown %}
+						<script type="text/javascript">
+						$(document).ready(function () {
+						$('#Countdown{{ product.product_id }}-{{ i }}').countdown({
+						until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+						labels: ['{{ text_years }}', '{{ text_months }} ', '{{ text_weeks }}', '{{ text_days }}', '{{ text_hrs }}', '{{ text_mins }}', '{{ text_secs }}'],
+						labels1: ['{{ text_year }}', '{{ text_month }} ', '{{ text_week }}', '{{ text_day }}', '{{ text_hr }}', '{{ text_min }}', '{{ text_sec }}'],
+						});
+						 //$('#Countdown{{ product.product_id }}-{{ i }}').countdown('pause');
+						});
+						</script>
+						{% endif %}
+				</div><!-- product-layout -->
+			{% if (count % rows == 0) or (count == octab.products|length) %}
+				</div>
+			{% endif %}
+			{% endif %}
+          {% endfor %}		  		  
+		{% else %}
+			<p class="text_empty">{{ text_empty }}</p>
+		{% endif %}
+        </div>
+		{% set i= i+1 %}		
+		{% endfor %}		
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('a[href="#tab-{{ config_module.module_id }}0"]').trigger( "click" );
+	  {% if config_module.slider %}
+      $(".tab-container-{{ config_module.module_id }}").owlCarousel({
+		items: {{ config_module.items }},
+        loop: {% if config_module.loop %} true {% else %} false {% endif %},
+        margin: {% if config_module.margin is defined %} {{ config_module.margin }} {% else %} 20 {% endif %},
+        nav: {% if config_module.navigation %} true {% else %} false {% endif %},
+        dots: {% if config_module.pagination %} true {% else %} false {% endif %},
+        autoplay:  {% if config_module.auto %} true {% else %} false {% endif %},
+        autoplayTimeout: {% if config_module.time %} {{ config_module.time }} {% else %} 2000 {% endif %},
+        autoplayHoverPause: true,
+        autoplaySpeed: {% if config_module.speed %} {{ config_module.speed }} {% else %} 3000 {% endif %},
+        navSpeed: {% if config_module.speed %} {{ config_module.speed }} {% else %} 3000 {% endif %},
+        dotsSpeed: {% if config_module.speed %} {{ config_module.speed }} {% else %} 3000 {% endif %},
+		lazyLoad: true,
+        responsive:{
+			0:{
+				items: 1,
+				nav: false,
+				dots: false
+			},
+			480:{
+				items: {{ config_module.smobile }},
+				nav: false,
+				dots: false
+			},
+			768:{
+				items: {{ config_module.mobile }},
+			},
+			992:{
+				items: {{ config_module.tablet }}
+			},
+			1200:{
+				items: {{ config_module.desktop }}
+			},
+			1600:{
+				items: {{ config_module.items }}
+			}
+		},
+		onInitialized: function() {
+			owlAction();
+		},
+		onTranslated: function() {
+			owlAction();
+		}
+      });
+		function owlAction() {
+			$(".tab-container-{{ config_module.module_id }} .owl-item").removeClass('first');
+			$(".tab-container-{{ config_module.module_id }} .owl-item").removeClass('last');
+			$(".tab-container-{{ config_module.module_id }} .owl-item").removeClass('before-active');
+			$(".tab-container-{{ config_module.module_id }} .owl-item.active:first").addClass('first');
+			$(".tab-container-{{ config_module.module_id }} .owl-item.active:last").addClass('last');
+			$('.tab-container-{{ config_module.module_id }} .owl-item.active:first').prev().addClass('before-active');
+		}
+	{% endif %}
+    });
+  </script>

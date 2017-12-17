@@ -1,0 +1,78 @@
+<div class="newletter-subscribe-container">
+<div class="container">
+<div class="container-inner">
+<div class="newletter-subscribe">
+	<div id="boxes-normal" class="newletter-container">
+		<div style="" id="dialog-normal" class="window">
+			<div class="box">
+				<div class="newletter-title">
+					<h3>{{ heading_title2 }}</h3>
+					<h4>{{ heading_title3 }}</h4>
+					<p class="des">{{ newletter_des }}</p>
+				</div>
+				<div class="box-content newleter-content">
+					<div id="frm_subscribe-normal">
+						<form name="subscribe" id="subscribe">
+							<input type="text" value="" name="subscribe_email" id="subscribe_email" placeholder="{{ entry_email }}">
+							<input type="hidden" value="" name="subscribe_name" id="subscribe_name" />
+							<a class="btn" onclick="email_subscribe()">{{ entry_button }}</a>
+							{% if option_unsubscribe %}
+								<a class="btn" onclick="email_unsubscribe()">{{ entry_unbutton }}</a>
+							{% endif %}   
+						</form>
+					</div><!-- /#frm_subscribe -->
+					<div id="notification-normal"></div>
+				</div><!-- /.box-content -->
+			</div>
+		</div>
+<script type="text/javascript">
+function email_subscribe(){
+	$.ajax({
+		type: 'post',
+		url: 'index.php?route=extension/module/newslettersubscribe/subscribe',
+		dataType: 'html',
+		data:$("#subscribe").serialize(),
+		success: function (html) {
+			try {
+				eval(html);
+			} 
+			catch (e) {
+			}				
+		}});
+}
+function email_unsubscribe(){
+	$.ajax({
+		type: 'post',
+		url: 'index.php?route=extension/module/newslettersubscribe/unsubscribe',
+		dataType: 'html',
+		data:$("#subscribe").serialize(),
+		success: function (html) {
+			try {
+				eval(html);
+			} catch (e) {
+			}
+		}}); 
+	$('html, body').delay( 1500 ).animate({ scrollTop: 0 }, 'slow'); 
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+		$('#subscribe_email').keypress(function(e) {
+            if(e.which == 13) {
+                e.preventDefault();
+                email_subscribe();
+            }
+			var name= $(this).val();
+		  	$('#subscribe_name').val(name);
+        });
+		$('#subscribe_email').change(function() {
+		 var name= $(this).val();
+		  		$('#subscribe_name').val(name);
+		});
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>

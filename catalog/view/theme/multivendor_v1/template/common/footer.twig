@@ -1,0 +1,83 @@
+<br><!-- you are good don't remove this -->
+<!-- Footer Start -->
+    <footer class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+             <h3 class="widget-title">{{ text_service }}</h3>
+            <ul>
+              <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+              <li><a href="{{ return }}">{{ text_return }}</a></li>
+              <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h3 class="widget-title">{{ text_extra }}</h3>
+            <ul>
+              <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+              <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+              <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+              <li><a href="{{ special }}">{{ text_special }}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h3 class="widget-title">{{ text_account }}</h3>
+                <ul>
+                  <li><a href="{{ account }}">{{ text_account }}</a></li>
+                  <li><a href="{{ order }}">{{ text_order }}</a></li>
+                  <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+                  <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+                </ul>   
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+          {% if informations %}
+            <h3 class="widget-title">{{ text_information }}</h3>
+            <ul>
+             {% for information in informations %}
+              <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>     
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <p>{{ powered }}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="payment pull-right">
+              <img src="assets/img/payment.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="icon-arrow-up"></i>
+    </a>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+    <!-- All js here -->
+         
+    <script type="text/javascript" src="catalog/view/theme/multivendor_v1/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="catalog/view/theme/multivendor_v1/assets/js/classie.js"></script>    
+    <script type="text/javascript" src="catalog/view/theme/multivendor_v1/assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="catalog/view/theme/multivendor_v1/assets/js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="catalog/view/theme/multivendor_v1/assets/js/main.js"></script>
+
+</body></html>

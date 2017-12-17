@@ -1,0 +1,146 @@
+<div class="layernavigation-module">
+<div class="panel panel-default">
+    <div class="layered-heading "><h2>{{ heading_title }}</h2></div>
+    <div class="layered">
+        <div class="list-group">
+            <div class="filter-attribute-container filter-attribute-remove-container">
+                {% set is_filter = false %}
+                {% for filter_group in filter_groups %}
+                    {% for filter in filter_group.filter %}
+                        {% set filter_id = filter.filter_id %}
+                        {% if filter.filter_id in filter_category %}
+                            {% set is_filter = true %}
+                            <div class="list-group-item filter-act-name">
+                                <p>{{ filter.e_name }}</p>
+                                <a class="a-filter remove-filter" href="javascript:void(0);" name="{{ filter_id }}"><span>Remove</span></a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {% if is_filter %}
+                    <div class="list-group-item filter-clear-all">
+                        <a class="clear-filter" href="javascript:void(0);" onclick="oclayerednavigationajax.filter('{{ clear_action }}')">Clear all</a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="filter-attribute-container filter-price">
+                <label>{{ text_byprice }}</label>
+                <div class="list-group-item">
+                    <div class="filter-price">
+                        <div id="slider-price"></div>
+                        <div class="slider-values">
+                            <span>{{ currency_symbol_left }}</span>
+                            <input id="price-from" disabled="disabled" class="input-price" type="text" value="{{ min_price }}" placeholder="Min" name="price-from"/>
+                            <span>{{ currency_symbol_right }}</span> -
+                            <span>{{ currency_symbol_left }}</span>
+                            <input id="price-to" disabled="disabled" class="input-price" type="text" value="{{ max_price }}" placeholder="Max" name="price-to" />
+                            <span>{{ currency_symbol_right }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% for filter_group in filter_groups %}
+            <div class="filter-attribute-container filter-{{ filter_group.name|lower }}">
+                <label>{{ filter_group.name }}</label>
+                <div class="list-group-item">
+                    <div id="filter-group{{ filter_group.filter_group_id }}">
+                        {% for filter in filter_group.filter %}
+                            {% set filter_id = filter.filter_id %}
+                            {% if filter.filter_id in filter_category %}
+                                <!-- Not show filter attribute -->
+                            {% else %}
+                                <a class="a-filter add-filter" href="javascript:void(0);" name="{{ filter_id }}">{{ filter.name }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <input type="hidden" class="filter-url" value="{{ action }}" />
+    <input type="hidden" class="price-url" value="{{ action }}" />
+</div>
+</div>
+<script type="text/javascript">
+    var filter_url = '';
+    var ids = [];
+    var min_price = parseFloat('{{ min_price }}');
+    var max_price = parseFloat('{{ max_price }}');
+    var current_min_price = parseFloat($('#price-from').val());
+    var current_max_price = parseFloat($('#price-to').val());
+    $('#slider-price').slider({
+        range   : true,
+        min     : min_price,
+        max     : max_price,
+        values  : [ current_min_price, current_max_price ],
+        slide   : function (event, ui) {
+            $('#price-from').val(ui.values[0]);
+            $('#price-to').val(ui.values[1]);
+            current_min_price = ui.values[0];
+            current_max_price = ui.values[1];
+        },
+        stop    : function (event, ui) {
+            filter_url = $('.price-url').val();
+            filter_url += '&price=' + current_min_price + ',' + current_max_price;
+            oclayerednavigationajax.filter(filter_url);
+        }
+    });
+    $('.a-filter').click(function () {
+        var id = $(this).attr('name');
+        var filter_ids;
+        filter_url = $('.filter-url').val();
+        if($(this).hasClass('add-filter') == true) {
+            ids.push(id);
+        } else if($(this).hasClass('remove-filter') == true) {
+            ids = $.grep(ids, function (value) {
+                return value != id;
+            });
+        }
+        filter_ids = ids.join(',');
+        filter_url += '&filter=' + filter_ids;
+        oclayerednavigationajax.filter(filter_url);
+    });
+    $('.clear-filter').click(function () {
+        ids = [];
+    });
+    $(document).ajaxComplete(function () {
+        var current_min_price = parseFloat($('#price-from').val());
+        var current_max_price = parseFloat($('#price-to').val());
+        $('#slider-price').slider({
+            range   : true,
+            min     : min_price,
+            max     : max_price,
+            values  : [ current_min_price, current_max_price ],
+            slide   : function (event, ui) {
+                $('#price-from').val(ui.values[0]);
+                $('#price-to').val(ui.values[1]);
+                current_min_price = ui.values[0];
+                current_max_price = ui.values[1];
+            },
+            stop    : function (event, ui) {
+                filter_url = $('.price-url').val();
+                filter_url += '&price=' + current_min_price + ',' + current_max_price;
+                oclayerednavigationajax.filter(filter_url);
+            }
+        });
+        $('.a-filter').click(function () {
+            var id = $(this).attr('name');
+            var filter_ids = '';
+            filter_url = $('.filter-url').val();
+            if($(this).hasClass('add-filter') == true) {
+                ids.push(id);
+            } else if($(this).hasClass('remove-filter') == true) {
+                ids = $.grep(ids, function (value) {
+                    return value != id;
+                });
+            }
+            filter_ids = ids.join(',');
+            filter_url += '&filter=' + filter_ids;
+            oclayerednavigationajax.filter(filter_url);
+        });
+        $('.clear-filter').click(function () {
+            ids = [];
+        });
+    });
+</script>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-12">
+      <div class="widget-ct widget-categories mb-30">
+        <div class="widget-s-title">
+        <h4>Categories</h4>
+        </div>
+        <ul id="accordion-category" class="product-cat">
+        {% for category in categories %}
+          {% if category.category_id == category_id %} 
+            {% if category.children %}
+            <li class="panel">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-category" href="#category1">{{ category.name }} <span><i class="icon-arrow-down"></i></span></a> 
+              <div id="category1" class="panel-collapse collapse">
+                <ul class="listSidebar">
+                {% for child in category.children %} 
+                  {% if child.category_id == child_id %}
+                    <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                  {% else %}
+                    <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            {% endif %}
+          {% else %} 
+            <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,294 @@
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+/* display none until init */
+.owl-carousel{
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}
+	
+.owl-carousel .owl-item{
+	float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+	cursor: pointer;
+}
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+/* Feel free to change duration  */ 
+.animated  {
+  -webkit-animation-duration : 1000 ms  ;
+  animation-duration : 1000 ms  ;
+  -webkit-animation-fill-mode : both  ;
+  animation-fill-mode : both  ;
+}  
+/* .owl-animated-out - only for current item */ 
+/* This is very important class. Use z-index if you want move Out item above In item */ 
+.owl-animated-out {
+  z-index : 1 
+   }
+/* .owl-animated-in - only for upcoming item
+/* This is very important class. Use z-index if you want move In item above Out item */ 
+.owl-animated-in {
+  z-index : 0 
+   }
+/* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */ 
+.fadeOut  {
+  -webkit-animation-name : fadeOut  ;
+  animation-name : fadeOut  ;
+}  
+@-webkit-keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }  
+  100% {
+    opacity : 0   ;
+  }  
+}
+@keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }  
+  100% {
+    opacity : 0   ;
+  }  
+}
+
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.owl-theme .owl-controls {
+    position: relative;
+}
+
+.owl-theme .owl-controls .item-link {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 70px;
+    opacity: 0.7;
+    margin: 4px 2px -2px 3px;
+    outline: none;
+}
+
+.owl-theme .owl-controls .item-link:focus {
+    -webkit-box-shadow: 0 0 8px #3498DB;
+    -moz-box-shadow: 0 0 8px #3498DB;
+    box-shadow: 0 0 8px #3498DB;
+    outline: none;
+}
+.owl-theme .owl-controls .item-link:hover,
+.owl-theme .owl-controls .active .item-link {
+    opacity: 1;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    display: none;
+}
+
+.owl-theme .prev-owl,
+.owl-theme .next-owl {
+   display: none;
+}
+
+.owl-theme .prev-owl:focus,
+.owl-theme .next-owl:focus {
+    -webkit-box-shadow: 0 0 8px #3498DB;
+    -moz-box-shadow: 0 0 8px #3498DB;
+    box-shadow: 0 0 8px #3498DB;
+}
+
+.owl-theme .prev-owl {
+    left: 24px;
+}
+
+.owl-theme .next-owl {
+    right: 24px;
+}
+.details-wrapper .owl-theme .owl-controls .owl-page span{
+	display: none!important;
+}
+
+.touch-slider .owl-controls{
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 100%;
+}
+.touch-slider .owl-controls .owl-buttons div.owl-prev {
+  left: 0;
+  position: absolute;
+}
+.touch-slider:hover .owl-controls .owl-buttons div.owl-prev {
+  margin-left: 15px;
+}
+.touch-slider .owl-controls .owl-buttons div.owl-next {
+  right: 0;
+  position: absolute;
+}
+.touch-slider:hover .owl-controls .owl-buttons div.owl-next {
+  margin-right: 15px;
+}
+
+// If PaginationNumbers is true 
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+}
+
+// Project Style
+.touch-carousel .owl-controls .owl-buttons {
+  position: absolute;
+  top: -50px;
+  right: 2px;
+}
+
+.touch-carousel.projects-carousel .owl-controls .owl-buttons {
+  right: 12px;
+}
+
+.touch-carousel.navigation-2 .owl-controls .owl-buttons {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.touch-carousel.navigation-2.clients-carousel .owl-controls .owl-buttons {
+  top: -8px;
+}
+
+.touch-carousel.navigation-2 .owl-controls .owl-buttons div, .touch-carousel.navigation-3 .owl-controls .owl-buttons div{
+  background-color: #f2f2f2;
+}
+
+.touch-carousel.navigation-2 .owl-controls .owl-buttons div i, .touch-carousel.navigation-3 .owl-controls .owl-buttons div i{
+  color: #666;
+}
+
+.touch-carousel.navigation-3 {
+  padding-top: 45px;
+}
+
+.touch-carousel.navigation-3.clients-carousel {
+  padding-top: 25px;
+}
+
+.touch-carousel.navigation-3 .owl-controls .owl-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.touch-carousel.navigation-2 .owl-controls .owl-buttons div, .touch-carousel.navigation-3 .owl-controls .owl-buttons div {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.touch-carousel.navigation-3.projects-carousel .owl-controls .owl-buttons {
+  right: 9px;
+}
+
+.touch-carousel .owl-controls .owl-buttons div, .testimonials-carousel .owl-controls .owl-buttons div {
+  height: 22px;
+  width: 22px;
+  line-height: 22px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;/*IE7 life-saver */
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  margin-left: 4px;
+  transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    border: 1px solid #ccc;
+}
+
+.touch-carousel .owl-controls .owl-buttons div i, .testimonials-carousel .owl-controls .owl-buttons div i {
+  font-size: 1.2em;
+  color: #ccc;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+#post-carousel .owl-controls{
+  margin-top: -22px!important;
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+{% if categories %}
+  <nav id="menu" class="navbar navbar-default" data-spy="affix" data-offset-top="50">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <!-- Stat Toggle Nav Link For Mobiles -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="{{ base }}">
+            <img src="{{ logo }}" alt="{{ name }}">
+          </a> 
+        </div>
+        <div class="navbar-collapse collapse">
+          <!-- Start Navigation List -->
+          <ul class="nav navbar-nav navbar-right">
+            {% for category in categories %}
+            {% if category.children %}      
+            <li>
+              <a href="{{ category.href }}" class="dropdown-toggle maga-menu-title" data-toggle="dropdown">{{ category.name }}<span class="caret"></span></a>
+              <div class="dropdown mega-menu megamenu1">
+                    <div class="row">
+                      <div class="col-sm-3 col-xs-12">
+                        {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+
+                        <ul class="menulinks">
+                          {% for child in children %}
+                            <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                          {% endfor %}
+                          <li>
+                            <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a>
+                          </li>
+                        </ul>
+                        {% endfor %}
+                      </div>
+                    </div>                    
+                  </div>
+            </li>
+            {% else %}
+            <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu Start -->
+    <ul class="mobile-menu">
+      {% for category in categories %}
+      {% if category.children %}      
+      <li>
+        <a href="{{ category.href }}">{{ category.name }}</a>
+        {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+        <ul class="dropdown menulinks">
+          {% for child in children %}
+            <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+          {% endfor %}
+          <li>
+            <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a>
+          </li>
+        </ul>
+        {% endfor %}
+
+      </li>
+      {% else %}
+      <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <!-- Mobile Menu End -->
+  </nav>
+
+{% endif %} 

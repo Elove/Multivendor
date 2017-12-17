@@ -1,0 +1,186 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-ocfeaturedcategory" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+          <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+      <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-ocfeaturedcategory" class="form-horizontal">
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              {% if error_name %}
+                <div class="text-danger">{{ error_name }}</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <select name="status" id="input-status" class="form-control">
+                {% if status %}
+                  <option value="1" selected="selected">{{ text_enabled }}</option>
+                  <option value="0">{{ text_disabled }}</option>
+                {% else %}
+                  <option value="1">{{ text_enabled }}</option>
+                  <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-slider">{{ entry_slider }}</label>
+            <div class="col-sm-10">
+              <select name="slider" id="input-slider" class="form-control">
+                {% if slider %}
+                  <option value="1" selected="selected">{{ text_enabled }}</option>
+                  <option value="0">{{ text_disabled }}</option>
+                {% else %}
+                  <option value="1">{{ text_enabled }}</option>
+                  <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-width">{{ entry_width }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="width" value="{{ width }}" placeholder="{{ entry_width }}" id="input-width" class="form-control" />
+              {% if error_width %}
+                <div class="text-danger">{{ error_width }}</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-height">{{ entry_height }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="height" value="{{ height }}" placeholder="{{ entry_height }}" id="input-height" class="form-control" />
+              {% if error_height %}
+                <div class="text-danger">{{ error_height }}</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-limit">{{ entry_limit }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="limit" value="{{ limit }}" placeholder="{{ entry_limit }}" id="input-limit" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-item">{{ entry_item }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="item" value="{{ item }}" placeholder="{{ entry_item }}" id="input-item" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-speed">{{ entry_speed }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="speed" value="{{ speed }}" placeholder="{{ entry_speed }}" id="input-speed" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-autoplay">{{ entry_autoplay }}</label>
+            <div class="col-sm-10">
+              <select name="autoplay" id="input-autoplay" class="form-control">
+                {% if autoplay %}
+                  <option value="1" selected="selected">{{ text_yes }}</option>
+                  <option value="0">{{ text_no }}</option>
+                {% else %}
+                  <option value="1">{{ text_yes }}</option>
+                  <option value="0" selected="selected">{{ text_no }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-rows">{{ entry_rows }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="rows" value="{{ rows }}" placeholder="{{ entry_rows }}" id="input-rows" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-shownextback">{{ entry_shownextback }}</label>
+            <div class="col-sm-10">
+              <select  id="input-shownextback" name="shownextback" class="form-control">
+                <option value="0"  {% if shownextback==0 %} selected="selected" {% endif %} >{{ text_no }}</option>
+                <option value="1"  {% if shownextback==1 %} selected="selected" {% endif %} >{{ text_yes }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-shownav">{{ entry_shownav }}</label>
+            <div class="col-sm-10">
+              <select id="input-shownav" name="shownav" class="form-control">
+                <option value="0"  {% if shownav==0 %} selected="selected" {% endif %} >{{ text_no }}</option>
+                <option value="1"  {% if shownav==1 %} selected="selected" {% endif %} >{{ text_yes }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-showdes">{{ entry_showdes }}</label>
+            <div class="col-sm-10">
+              <select id="input-showdes" name="showdes" class="form-control">
+                <option value="0"  {% if showdes==0 %} selected="selected" {% endif %} >{{ text_no }}</option>
+                <option value="1"  {% if showdes==1 %} selected="selected" {% endif %} >{{ text_yes }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-showsub">{{ entry_showsub }}</label>
+              <div class="col-sm-10">
+                <select  id="input-showsub" name="showsub" class="form-control">
+                  <option value="0" {% if showsub==0 %} selected="selected" {% endif %} >{{ text_no }}</option>
+                  <option value="1" {% if showsub==1 %} selected="selected" {% endif %} >{{ text_yes }}</option>
+                </select>
+              </div>
+          </div>
+          <div class="form-group ">
+            <label class="col-sm-2 control-label" for="input-showsubnumber">{{ entry_showsubnumber }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="showsubnumber" value="{{ showsubnumber }}" placeholder="{{ entry_showsubnumber }}" id="input-showsubnumber" class="form-control" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{ footer }}
+<script type="text/javascript">
+  $(document).ready(function() {
+    var show_sub = $('#input-showsub').val();
+    if(show_sub == '1') {
+      $('#input-showsubnumber').closest('.form-group').show();
+    } else {
+      $('#input-showsubnumber').closest('.form-group').hide();
+    }
+
+    $('#input-showsub').change(function () {
+      if($('#input-showsub').val() == '1') {
+        $('#input-showsubnumber').closest('.form-group').show();
+      } else {
+        $('#input-showsubnumber').closest('.form-group').hide();
+      }
+    })
+  })
+</script>

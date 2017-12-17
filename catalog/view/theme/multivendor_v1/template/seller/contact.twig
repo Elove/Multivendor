@@ -1,0 +1,144 @@
+{{ header }}
+<div class="container">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+ <section id="content">
+<div class="contact-info">
+<div class="container">
+    <div class="contact-info-wrapper clearfix">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="contact-item-wrapper">
+          <h4>{{ text_location }}</h4>
+          <div class="info">
+          <div class="icon">
+          <i class="icon-location-pin"></i>
+          </div>
+          <strong>{{ store }}</strong><br />
+          {% for result in addresses %}
+            <address>
+            {{ result.address }}
+            </address>
+          {% endfor %}
+          </div>
+          </div>
+        </div>
+
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="contact-item-wrapper">
+        <h4>{{ text_telephone }}</h4>
+        <div class="info">
+        <div class="icon">
+        <i class="icon-screen-smartphone"></i>
+        </div>
+        <p>{{ telephone }}</p>
+        {% if fax %}
+        <strong>{{ text_fax }}</strong><br>
+        {{ fax }}
+        {% endif %}
+        </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="contact-item-wrapper">
+        <h4>{{ text_open }}</h4>
+        <div class="info">
+        <div class="icon">
+        <i class="icon-paper-plane"></i>
+        </div>
+        <p>{% if open %}
+        <strong>{{ text_open }}</strong><br />
+        {{ open }}<br />
+        <br />
+        {% endif %}
+        {% if comment %}
+        <strong>{{ text_comment }}</strong><br />
+        {{ comment }}
+        {% endif %}</p>
+        </div>
+        </div>
+      </div>
+    </div>
+<div class="col-md-12">
+<div class="header-wrap text-center">
+<h3>{{ text_send_us_message }}</h3>
+</div>
+</div>
+</div>
+</div>
+  <div class="contact-form-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="{{ action }}" method="post" enctype="multipart/form-data" id="contactForm" class="contact-form" data-toggle="validator">
+            <div class="row">
+              <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                        <div class="col-md-12">
+                      	  <div class="form-group required">
+                             <input type="text" name="product_name" value="{{ product_name }}" readonly class="form-control" />
+                      	     <input type="hidden" name="product_id" value="{{ product_id }}"/>
+                      	     <input type="hidden" name="seller_email" value="{{ seller_email }}"/>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group required">
+                              <input type="text" name="name" placeholder="{{ entry_name }}" value="{{ name }}" id="input-name" class="form-control" />
+                              {% if error_name %}
+                              <div class="help-block with-errors">{{ error_name }}</div>
+                              {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <input type="text" name="email" placeholder="{{ entry_email }}" value="{{ email }}" id="input-email" class="form-control" />
+                                {% if error_email %}
+                                <div class="help-block with-errors">{{ error_email }}</div>
+                                {% endif %}
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                  		      <div class="form-group">
+                                <input type="text" name="phone" placeholder="{{ text_telephone }}" value="{{ phone }}" id="input-phone" class="form-control" />
+                            </div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea name="enquiry" placeholder="{{ entry_enquiry }}" rows="10" id="input-enquiry" class="form-control">{{ enquiry }}</textarea>
+                      {% if error_enquiry %}
+                      <div class="help-block with-errors">{{ error_enquiry }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-xs-12">
+                    <button type="submit" value="{{ button_submit }}" id="submit" class="btn btn-common">{{ button_submit }}</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                 </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }}

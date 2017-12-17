@@ -1,0 +1,160 @@
+{{ header }}
+<div id="category-content" class="product-area">
+<style type="text/css">
+  #category-content {
+  padding: 60px 0;
+}
+</style>
+<div id="product-category" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="row">
+  {{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="col-md-9 {{ class }} col-xs-12">{{ content_top }}
+      <div class="shop-content" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-12 offset-md-*">
+        <div class="product-option mb-30 clearfix">
+        <ul class="shop-tab">
+          <li class="active">
+            <a id="grid-view" aria-expanded="false" href="#grid-view" data-toggle="tab"><i class="icon-grid"></i></a>
+          </li>
+          <li>
+            <a aria-expanded="false" id="list-view" href="#list-view" data-toggle="tab"><i class="icon-list"></i></a>
+            </li>
+        </ul>
+        <div class="showing text-right">
+          <p class="hidden-xs">
+          <a href="{{ compare }}" id="compare-total" class="btn btn-common">{{ text_compare }}</a></p>
+        </div>
+        </div>
+        </div></div>
+      {% if products %}
+
+      <div class="tab-content"> 
+       <div id="product-layout">
+        <div  class="tab-pane active">
+        {% for product in products %}
+        <div  class="product-common col-md-4 col-sm-6 col-xs-12">
+          <div class="shop-product">
+          <div class="product-box">
+            <a href="{{ product.href }}">
+              <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+            </a>
+            <div class="cart-overlay">
+            </div>
+            <div class="actions">
+              <div class="add-to-links">
+                <a type="button" class="btn-cart" onclick="cart.add('{{ product.product_id }}');">
+                  <i class="icon-basket"></i> 
+                </a>
+                <a type="button" class="btn-wish" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+                <i class="fa fa-heart"></i>
+                </a>
+              <a type="button" class="btn-quickview md-trigger" data-modal="modal-3" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');">
+              <i class="fa fa-exchange"></i>
+              </a>
+              </div>
+            </div>             
+          </div>
+          <div class="product-info">
+            <h4 class="product-title">
+              <a href="{{ product.href }}">{{ product.name }}</a>
+            </h4>  
+            <div class="common-align-items align-items">
+              <div  class="the-price pull-left">
+                  {% if product.price %}
+                    <span class="price">
+                    {% if not product.special %}
+                    {{ product.price }}
+                    {% else %}
+                    <span class="price-new">{{ product.special }}</span>
+                     <span class="price-old">{{ product.price }}</span>
+                    {% endif %}
+                  </span>
+                  {% endif %} 
+              </div>
+              <div class="pull-right-review pull-right">
+               {% if product.rating %}
+               <div class="for-list-view"></div>
+                <div class="common-reviews-icon reviews-icon">
+                  {% for i in 5 %}
+                  {% if product.rating < i %}
+                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                  {% else %}
+                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                  {% endif %}
+                  {% endfor %}
+                 </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="common-price fix" style="display: none">
+              <h4 class="product-title">
+              <a href="{{ product.href }}">{{ product.name }}</a>
+             </h4> 
+            </div>
+            <div class="list-view-price" style="display: none">
+            <br>
+              <div  class="pull-left">
+                  {% if product.price %}
+                    <span class="price">
+                    {% if not product.special %}
+                    {{ product.price }}
+                    {% else %}
+                    <span class="price-new">{{ product.special }}</span>
+                     <span class="price-old">{{ product.price }}</span>
+                    {% endif %}
+                  </span>
+                  {% endif %} 
+              </div>
+            </div>
+              <div class="product-description mb-20" style="display: none">
+                <p>{{ product.description }}</p>
+              </div>
+              <div class="add-cart-btn" style="display: none;">
+                <button class="btn btn-common" type="button" class="btn-cart" onclick="cart.add('{{ product.product_id }}');">
+                  <i class="icon-basket"></i> 
+              </button>
+              </div>
+          </div> 
+          </div>
+        </div> 
+        {% endfor %}
+        </div>
+       </div>
+      </div>
+      <div class="pagination">
+      <div class="results-navigation pull-left">
+      <p class="hidden-xs">{{ results }}</p>
+      </div>
+      <nav class="navigation pull-right">
+      {{ pagination }}
+      </nav>
+      </div>
+      {% endif %}
+      {% if not categories and not products %}
+      <p>{{ text_empty }}</p>
+      <div class="buttons">
+        <div class="pull-right">
+        <a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+      </div>
+      {% endif %}
+      {{ content_bottom }}
+    {{ column_right }}
+    </div><!-- shop-content -->
+    </div>
+</div>
+</div><!--  end row -->
+</div>
+{{ footer }} 

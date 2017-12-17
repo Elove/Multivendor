@@ -1,0 +1,103 @@
+<div class="list-group">
+  {% for category in categories %}
+  {% if category.category_id == category_id %} 
+  <a href="{{ category.href }}" class="list-group-item active">{{ category.name }}</a> 
+  {% if category.children %}
+  {% for child in category.children %}
+  {% if child.category_id == child_id %}
+  <a href="{{ child.href }}" class="list-group-item active">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a> 
+  {% else %} 
+  <a href="{{ child.href }}" class="list-group-item">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% else %} <a href="{{ category.href }}" class="list-group-item">{{ category.name }}</a>
+  {% endif %}
+  {% endfor %}
+</div>
+<div id="content" class="product-area">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="widget-search md-30">
+<form action="#">
+<input class="form-control" placeholder="Search here..." type="text">
+<button type="submit">
+<i class="fa fa-search"></i>
+</button>
+</form>
+</div>
+<div class="widget-ct widget-categories mb-30">
+<div class="widget-s-title">
+<h4>Categories</h4>
+</div>
+<ul id="accordion-category" class="product-cat">
+<li class="panel">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-category" href="#category1">Fashion <span><i class="icon-arrow-down"></i></span></a>
+<div id="category1" class="panel-collapse collapse">
+<ul class="listSidebar">
+<li><a href="#">Men</a></li>
+<li><a href="#">Women</a></li>
+<li><a href="#">Bag</a></li>
+</ul>
+</div>
+</li>
+<li><a href="#">Trending <span>(69)</span></a></li>
+<li><a href="#">New Arrivals <span>(27)</span></a></li>
+<li><a href="#">Flowerpot<span>(57)</span></a></li>
+<li><a href="#">Cups<span>(39)</span></a></li>
+<li><a href="#">Beauty<span>(95)</span></a></li>
+<li><a href="#">Wall Hook <span>(69)</span></a></li>
+<li><a href="#" class="pr-all">Product All</a></li>
+</ul>
+</div>
+ <div class="widget-ct widget-color mb-30">
+<div class="widget-s-title">
+<h4>Color</h4>
+</div>
+<div class="widget-info color-filter clearfix">
+<ul>
+<li><a href="#"><span class="color color-1"></span>LightSalmon<span class="count">12</span></a></li>
+<li><a href="#"><span class="color color-2"></span>Dark Salmon<span class="count">20</span></a></li>
+<li><a href="#"><span class="color color-3"></span>Tomato<span class="count">59</span></a></li>
+<li class="active"><a href="#"><span class="color color-4"></span>Deep Sky Blue<span class="count">45</span></a></li>
+<li><a href="#"><span class="color color-5"></span>Electric Purple<span class="count">78</span></a></li>
+<li><a href="#"><span class="color color-6"></span>Atlantis<span class="count">10</span></a></li>
+<li><a href="#"><span class="color color-7"></span>Deep Lilac<span class="count">15</span></a></li>
+</ul>
+</div>
+</div>
+<div class="widget-ct widget-filter mb-30">
+<div class="widget-s-title">
+<h4>Filter By Price</h4>
+</div>
+
+<div class="widget-info filter-price" style="position: relative;">
+<div>
+<input type="text" id="range" value="" name="range" />
+</div>
+<div class="filter-btn">
+<button class="btn btn-common" type="button">Filter</button>
+</div>
+</div>
+</div>
+<div class="widget-ct widget-size mb-30">
+<div class="widget-s-title">
+<h4>Size</h4>
+</div>
+<div class="widget-info size-filter clearfix">
+<ul>
+<li><a href="#">M</a></li>
+<li class="active"><a href="#">S</a></li>
+<li><a href="#">L</a></li>
+<li><a href="#">SL</a></li>
+<li><a href="#">XL</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-ct widget-banner">
+<div class="widget-info widget-banner-img">
+<a href="#"><img src="assets/img/banner-left.jpg" alt=""></a>
+</div>
+</div>
+</div>
