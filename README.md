@@ -53,5 +53,10 @@ Additional software and development done by [Ovicko](https://ovicko.com).
 Submit any issues so that we help make this a great software.
 
 # Disclaimer
-This software is given as it is and the author is not liable in any way or any form for anything caused by use of this software.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
+You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
