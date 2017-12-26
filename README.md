@@ -1,8 +1,9 @@
 # Multi Vendor 
 
+Hey there, Multi Vendor is neither an extension or module.  
 Multi Vendor is a simple stand alone Open source script that can be used for ecommerce purposes.
 ## Features
-Multi Vendor is built on top of OpenCart 3.x thus it inherits all the inbuilt  features of OpenCart.
+Multi Vendor is built on top of OpenCart 3.x thus it inherits all the inbuilt  OpenCart features .
 You can easily use the Multi Vendor to create a Marketplace store where both admin and customers can sell their goods and services.
 The admin will earn money through Membership plans and commissions on sales
 Checkout the Multi Vendor [DEMO](http://demo.codlance.com)
@@ -25,17 +26,17 @@ Multi Vendor features include
 14. Seller  Membership Plans and commission based charges
 15. Customers can review sellers.
 16. Different seller dashboard.
-27. Custom settings in the back end for further customization.
+27. Custom settings in the admin back end for further customization.
 
 
 ## Installation
-    Unzip the zip files to your web directory.
-    Rename the admin/config-dist.php,seller/config-dist.php and config-dist.php files to config.php.
-    Make sure the seller/config.php, admin/config.php, config.php files have read and write permissions.
-    Visit http://yourdomain.com/install to start the installtion process
-    Login to your admin end, give admins permissions by navigating to System->Users->User groups (edit) select all and save.
-	That's it!
-	You can now access the seller dashboard at yourdomain/seller/index.php
+    Unzip the zip files to your web directory.  
+    Rename the admin/config-dist.php,seller/config-dist.php and config-dist.php files to config.php.  
+    Make sure the seller/config.php, admin/config.php, config.php files have read and write permissions.  
+    Visit http://yourdomain.com/install to start the installtion process  
+    Login to your admin end, give admins permissions by navigating to System->Users->User groups (edit) select all and save.  
+	That's it!  
+	You can now access the seller dashboard at yourdomain/seller/index.php  
     
     
 ## To do
@@ -52,7 +53,6 @@ This software is built on top of [OpenCart](http://opencart.com) .
 Additional software and development done by [Ovicko](https://ovicko.com).
 
 Submit any issues so that we help make this a great software.
-
 # Disclaimer
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
