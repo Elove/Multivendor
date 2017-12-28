@@ -34,8 +34,8 @@ class ControllerCommonFooter extends Controller {
 		$data['voucher'] = $this->url->link('account/voucher', '', 'SSL');
 		$data['affiliate'] = $this->url->link('affiliate/account', '', 'SSL');
 		$data['special'] = $this->url->link('product/special');
-		$data['account'] = $this->url->link('saccount/account', '', 'SSL');
-		$data['order'] = $this->url->link('saccount/order', '', 'SSL');
+		$data['account'] = $this->url->link('seller/account', '', 'SSL');
+		$data['order'] = $this->url->link('seller/order', '', 'SSL');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
 		$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));

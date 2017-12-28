@@ -1,7 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e025f402-4bfb-423a-9d02-bcb18a0103e7" name="Default" comment="" />
+    <list default="true" id="e025f402-4bfb-423a-9d02-bcb18a0103e7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/controller/seller/uploadimages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/address.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/download.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/newsletter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/recurring.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/reward.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/account/wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/tracking.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/affiliate/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/coupon.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/currency.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/customer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/reward.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/shipping.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/api/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/arabic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/captcha/basic_captcha.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/captcha/google_captcha.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/checkout/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/checkout/checkout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/checkout/failure.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/checkout/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/column_left.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/currency.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/filemanager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/footer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/language.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/maintenance.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/common/search.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/error/not_found.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/information/contact.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/information/information.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/information/sitemap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/affiliate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/customer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/review.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/seller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/mail/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/affiliate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/bestseller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/category.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/ebay_listing.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/featured.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/filter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/google_hangouts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/information.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/latest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/special.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/module/store.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/openbay/amazon_order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/openbay/amazonus_order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/openbay/ebay_order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/openbay/etsy_order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/amazon_login_pay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/authorizenet_aim.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/authorizenet_sim.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/bank_transfer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/bluepay_hosted.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/bluepay_redirect.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/cheque.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/cod.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/firstdata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/firstdata_remote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/free_checkout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/g2apay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/globalpay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/globalpay_remote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/klarna_account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/klarna_invoice.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/liqpay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/nochex.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/paymate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/paypoint.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/payza.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/perpetual_payments.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_express.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_payflow.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_payflow_iframe.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_pro.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_pro_iframe.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/pp_standard.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/realex.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/realex_remote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/sagepay_direct.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/sagepay_server.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/sagepay_us.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/securetrading_pp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/securetrading_ws.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/skrill.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/twocheckout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/web_payment_software.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/payment/worldpay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/category.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/compare.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/manufacturer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/product.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/search.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/product/special.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/address.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/address2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/attribute.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/category.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/contact.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/download.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/extension.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/filemanager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/folderimage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/invoiceorder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/messages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/newsletter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/offer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/option.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/plan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/plan1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/reward.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/smartexportimport.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/uploadimages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/saccount/wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/address.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/address2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/attribute.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/category.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/contact.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/download.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/extension.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/filemanager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/folderimage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/invoiceorder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/messages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/newsletter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/offer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/option.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/order.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/plan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/plan1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/return.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/reward.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/smartexportimport.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/uploadimages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/seller/wishlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/auspost.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/citylink.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/fedex.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/flat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/free.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/item.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/parcelforce_48.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/pickup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/royal_mail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/ups.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/usps.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/shipping/weight.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/tool/upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/coupon.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/credit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/handling.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/klarna_fee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/low_order_fee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/reward.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/shipping.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/sub_total.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/total.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/arabic/total/voucher.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/forgotten.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/payment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/success.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/tracking.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/affiliate/transaction.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/language/english/seller/uploadimages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/model/seller/smartexportimport.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/common/header-1.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/account.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/account_backup.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/address_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/address_form2.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/address_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/attribute_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/attribute_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/category_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/category_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/contact.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/detail_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/download.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/download_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/download_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/edit.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/filemanager.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/forgotten.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/login.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/login.tplbackup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/messages_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/newsletter.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/offer_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/offer_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/option_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/option_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/order_info.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/order_invoice.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/order_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/password.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/pay.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/plan.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/plan1.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/product_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/product_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/register.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/register.tpliiii" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/return_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/return_info.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/return_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/reward.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/smartexportimport.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/transaction.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/uploadimages.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/voucher.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller1/wishlist.tpl" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seller/catalog/controller/common/footer.php" afterPath="$PROJECT_DIR$/seller/catalog/controller/common/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seller/catalog/controller/common/home.php" afterPath="$PROJECT_DIR$/seller/catalog/controller/common/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seller/catalog/model/seller/category.php" afterPath="$PROJECT_DIR$/seller/catalog/model/seller/category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seller/catalog/model/seller/seller.php" afterPath="$PROJECT_DIR$/seller/catalog/model/seller/seller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/detail_form.tpl" afterPath="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/detail_form.tpl" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,58 +296,184 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="account.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-649">
+            <state relative-caret-position="3400">
               <caret line="157" column="29" lean-forward="false" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/common/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/common/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-90">
+              <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadimages.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/uploadimages.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invoiceorder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/language/english/seller/invoiceorder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-600">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="210" column="13" lean-forward="false" selection-start-line="210" selection-start-column="13" selection-end-line="210" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/model/seller/category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
               <folding>
-                <marker date="1512397702567" expanded="true" signature="57:10449" ph="..." />
-                <marker date="1512397702567" expanded="true" signature="85:10447" ph="..." />
-                <marker date="1512397702567" expanded="true" signature="10203:10335" ph="..." />
-                <marker date="1512397702567" expanded="true" signature="10343:10442" ph="..." />
+                <marker date="1514441081128" expanded="true" signature="661:758" ph="DELETE FROM " />
+                <marker date="1514441081128" expanded="true" signature="853:1317" ph="INSERT INTO ${DB_PREFIX}category_description... " />
+                <marker date="1514441081128" expanded="true" signature="1405:1514" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+                <marker date="1514441081128" expanded="true" signature="1653:1813" ph="DELETE FROM " />
+                <marker date="1514441081128" expanded="true" signature="1902:2021" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+                <marker date="1514441081128" expanded="true" signature="2185:2315" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+                <marker date="1514441081128" expanded="true" signature="2797:2889" ph="DELETE FROM " />
+                <marker date="1514441081128" expanded="true" signature="2974:3093" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+                <marker date="1514441081128" expanded="true" signature="3158:3326" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+                <marker date="1514441081128" expanded="true" signature="3602:3954" ph="INSERT INTO ${DB_PREFIX}category... " />
+                <marker date="1514441081128" expanded="true" signature="4327:4802" ph="INSERT INTO ${DB_PREFIX}category_description... " />
+                <marker date="1514441081128" expanded="true" signature="4853:4974" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+                <marker date="1514441081128" expanded="true" signature="5037:5209" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+                <marker date="1514441081128" expanded="true" signature="5250:5416" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+                <marker date="1514441081128" expanded="true" signature="5537:5666" ph="INSERT INTO ${DB_PREFIX}category_filter... " />
+                <marker date="1514441081128" expanded="true" signature="5793:5922" ph="INSERT INTO ${DB_PREFIX}category_to_store... " />
+                <marker date="1514441081128" expanded="true" signature="6143:6322" ph="INSERT INTO ${DB_PREFIX}category_to_layout... " />
+                <marker date="1514441081128" expanded="true" signature="6388:6535" ph="INSERT INTO ${DB_PREFIX}url_alias... " />
+                <marker date="1514441081128" expanded="true" signature="8215:8890" ph="SELECT DISTI... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="8994:9633" ph="SELECT DISTI... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="10522:11038" ph="SELECT c.*,c... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="11259:12020" ph="SELECT c1.ap... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="12882:13646" ph="SELECT cp.ca... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="14411:14888" ph="SELECT c.*,c... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="15027:15490" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="15535:15860" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="15991:16295" ph="SELECT name,... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="16665:16764" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="17280:17376" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="17621:17718" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="18078:18193" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="18434:18549" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="18679:18776" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081128" expanded="true" signature="18903:19012" ph="SELECT COUNT... ${DB_PREFIX}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="seller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/seller.php">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/model/seller/seller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2009">
-              <caret line="223" column="26" lean-forward="false" selection-start-line="223" selection-start-column="26" selection-end-line="223" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="185">
+              <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+              <folding>
+                <marker date="1514441081316" expanded="true" signature="118:205" ph="SELECT * FRO... ${DB_PREFIX}seller_folder" />
+                <marker date="1514441081316" expanded="true" signature="824:1066" ph="INSERT INTO ${DB_PREFIX}seller_folder... " />
+                <marker date="1514441081316" expanded="true" signature="1143:1227" ph="SELECT * FRO... ${DB_PREFIX}sellers" />
+                <marker date="1514441081316" expanded="true" signature="1336:1420" ph="SELECT * FRO... ${DB_PREFIX}sellers" />
+                <marker date="1514441081316" expanded="true" signature="1579:1677" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="1788:1876" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="2124:2212" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="2402:2488" ph="DELETE FROM " />
+                <marker date="1514441081316" expanded="true" signature="3273:3364" ph="SELECT usern... ${DB_PREFIX}sellers" />
+                <marker date="1514441081316" expanded="true" signature="3555:3777" ph="INSERT INTO ${DB_PREFIX}seller_folder... " />
+                <marker date="1514441081316" expanded="true" signature="3848:3913" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="4522:4606" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="5261:5351" ph="select commi... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="5458:5787" ph="INSERT INTO ${DB_PREFIX}upgraded_members... " />
+                <marker date="1514441081316" expanded="true" signature="6667:7495" ph="INSERT INTO ${DB_PREFIX}sellers... " />
+                <marker date="1514441081316" expanded="true" signature="7772:7977" ph="INSERT INTO ${DB_PREFIX}saddress... " />
+                <marker date="1514441081316" expanded="true" signature="11163:11247" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="11902:11992" ph="select commi... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="12099:12428" ph="INSERT INTO ${DB_PREFIX}upgraded_sellers... " />
+                <marker date="1514441081316" expanded="true" signature="13392:13495" ph="SELECT folde... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="14408:14490" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="14592:14680" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="14782:14886" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="15042:15240" ph="SELECT *, CO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="17384:17507" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="17630:17759" ph="SELECT COUNT... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="17876:17989" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="18085:18171" ph="SELECT * FRO... ${DB_PREFIX}seller_ip" />
+                <marker date="1514441081316" expanded="true" signature="18274:18367" ph="SELECT folde... ${DB_PREFIX}sellers" />
+                <marker date="1514441081316" expanded="true" signature="18477:18573" ph="SELECT * FRO... ${DB_PREFIX}seller_ip_blacklist" />
+                <marker date="1514441081316" expanded="true" signature="18683:18801" ph="SELECT SUM(a... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="19163:19296" ph="SELECT SUM(a... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="19329:19586" ph="SELECT SUM(a... ${DB_PREFIX}" />
+                <marker date="1514441081316" expanded="true" signature="19727:19837" ph="SELECT COUNT... ${DB_PREFIX}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smartexportimport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/smartexportimport.php">
+      <file leaf-file-name="detail_form.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/detail_form.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plan1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/plan1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="return.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/return.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="174">
+              <caret line="641" column="37" lean-forward="false" selection-start-line="641" selection-start-column="37" selection-end-line="641" selection-end-column="37" />
+              <folding>
+                <marker date="1514441080991" expanded="true" signature="29670:29695" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="29793:29857" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="30667:30678" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="35460:35478" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="38912:38930" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="42559:42573" ph="..." />
+                <marker date="1514441080991" expanded="true" signature="46393:46407" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,6 +491,7 @@
       <find>.php</find>
       <find>getSellername</find>
       <find>/*</find>
+      <find>saccount</find>
     </findStrings>
     <replaceStrings>
       <replace>getProductsSeller</replace>
@@ -94,7 +503,14 @@
     </replaceStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\projects\opencart\multivendor2</dir>
+      <dir>E:\CodLance\multivendor2\opencart_multivendor\seller</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,6 +528,11 @@
         <option value="$PROJECT_DIR$/seller/catalog/controller/saccount/contact.php" />
         <option value="$PROJECT_DIR$/seller/catalog/controller/seller/account.php" />
         <option value="$PROJECT_DIR$/seller/catalog/controller/seller/return.php" />
+        <option value="$PROJECT_DIR$/seller/catalog/controller/common/footer.php" />
+        <option value="$PROJECT_DIR$/seller/catalog/controller/common/home.php" />
+        <option value="$PROJECT_DIR$/seller/catalog/model/seller/category.php" />
+        <option value="$PROJECT_DIR$/seller/catalog/model/seller/seller.php" />
+        <option value="$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/detail_form.tpl" />
       </list>
     </option>
   </component>
@@ -145,7 +566,7 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -159,6 +580,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencart_multivendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencart_multivendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -166,24 +602,299 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="multivendor2">
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multivendor2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multivendor2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="theme">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="default">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="template">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="theme">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="default">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="template">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="theme">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="default">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="model">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="model">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="language">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="english">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="language">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="english">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="opencart_multivendor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="catalog">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="seller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -198,6 +909,119 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
     <property name="settings.editor.splitter.proportion" value="0.23385519" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/multivendor_flexa.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/multivendor_moonsoon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/multivendor_moonsoon_preview.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -228,6 +1052,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -265,32 +1095,33 @@
       <option name="presentableId" value="Default" />
       <updated>1512372988256</updated>
       <workItem from="1512372989709" duration="7892000" />
+      <workItem from="1514440009662" duration="1187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7892000" />
+    <option name="totallyTimeSpent" value="9079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20937042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5014837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.047477745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34699854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -305,287 +1136,246 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_attribute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-catalog_controller_common_cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_attribute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/xml/multiseller_vqmod.xml.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="1538" column="18" lean-forward="false" selection-start-line="1538" selection-start-column="18" selection-end-line="1538" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_common_column_left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="358" column="38" lean-forward="false" selection-start-line="358" selection-start-column="38" selection-end-line="358" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_common_column_left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_setting_setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="626" column="46" lean-forward="true" selection-start-line="626" selection-start-column="46" selection-end-line="626" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/sale/seller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="30" />
-          <folding>
-            <marker date="1512375102811" expanded="true" signature="106:211" ph="SELECT *, CO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="2284:2375" ph="SELECT folde... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="3637:3718" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="3839:4471" ph="INSERT INTO ${DB_PREFIX}saddress... " />
-            <marker date="1512375102811" expanded="true" signature="5030:5629" ph="INSERT INTO ${DB_PREFIX}sellers... " />
-            <marker date="1512375102811" expanded="true" signature="6255:6416" ph="INSERT INTO ${DB_PREFIX}seo_url... " />
-            <marker date="1512375102811" expanded="true" signature="7676:8358" ph="INSERT INTO ${DB_PREFIX}saddress... " />
-            <marker date="1512375102811" expanded="true" signature="8918:9011" ph="SELECT folde... ${DB_PREFIX}sellers" />
-            <marker date="1512375102811" expanded="true" signature="9137:9228" ph="SELECT folde... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="9596:9676" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="9700:9786" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="9810:9901" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="9925:10007" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="10031:10112" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="10136:10225" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="10249:10329" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="10412:10503" ph="SELECT DISTI... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="10609:10725" ph="SELECT DISTI... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="10817:10903" ph="SELECT *, CO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="14942:15424" ph="SELECT sa.*,... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="15633:15741" ph="SELECT * FRO... ${DB_PREFIX}country" />
-            <marker date="1512375102811" expanded="true" signature="16145:16244" ph="SELECT * FRO... ${DB_PREFIX}zone" />
-            <marker date="1512375102811" expanded="true" signature="16470:16579" ph="SELECT * FRO... ${DB_PREFIX}country" />
-            <marker date="1512375102811" expanded="true" signature="16828:16928" ph="SELECT * FRO... ${DB_PREFIX}zone" />
-            <marker date="1512375102811" expanded="true" signature="19601:19642" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="20511:20575" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="20817:20909" ph="SELECT addre... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="21254:21346" ph="SELECT addre... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="21581:21635" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="23197:23288" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="23422:23521" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="23654:23755" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="23883:23978" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="24118:24228" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="24461:24702" ph="INSERT INTO ${DB_PREFIX}seller_transaction... " />
-            <marker date="1512375102811" expanded="true" signature="26352:26441" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="26639:26784" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="26912:27022" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="27142:27260" ph="SELECT SUM(a... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="27626:27759" ph="SELECT SUM(a... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="27792:28049" ph="SELECT SUM(a... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="28200:28307" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="28537:28768" ph="INSERT INTO ${DB_PREFIX}seller_reward... " />
-            <marker date="1512375102811" expanded="true" signature="30247:30331" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="30436:30576" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="30700:30804" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="30920:31048" ph="SELECT CONCA... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="31166:31273" ph="SELECT SUM(p... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="31407:31509" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="31628:31712" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="31820:31911" ph="SELECT addre... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="32031:32131" ph="SELECT COUNT... ${DB_PREFIX}" />
-            <marker date="1512375102811" expanded="true" signature="32229:32323" ph="INSERT INTO `${DB_PREFIX}seller_ip_blacklist`... " />
-            <marker date="1512375102811" expanded="true" signature="32393:32489" ph="DELETE FROM " />
-            <marker date="1512375102811" expanded="true" signature="32581:32695" ph="SELECT COUNT... ${DB_PREFIX}seller_ip_blacklist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="247" column="31" lean-forward="false" selection-start-line="247" selection-start-column="20" selection-end-line="247" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_setting_setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="873" column="28" lean-forward="false" selection-start-line="873" selection-start-column="28" selection-end-line="873" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_catalog_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vqmod/multiseller_vqmod.xml.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/address.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/address2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1526">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1512397679408" expanded="true" signature="763:970" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512397679408" expanded="true" signature="1011:1217" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1512397679408" expanded="true" signature="1401:1545" ph="SELECT * FRO... ${DB_PREFIX}setting" />
-            <marker date="1512397679408" expanded="true" signature="3433:3526" ph="DELETE FROM " />
-            <marker date="1512397679408" expanded="true" signature="3553:3889" ph="SELECT DISTI... ${DB_PREFIX}api" />
-            <marker date="1512397679408" expanded="true" signature="4454:4514" ph="SELECT * FRO... ${DB_PREFIX}language" />
-            <marker date="1512397679408" expanded="true" signature="7685:7721" ph="SELECT * FRO... ${DB_PREFIX}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-649">
-          <caret line="157" column="29" lean-forward="false" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
-          <folding>
-            <marker date="1512397702567" expanded="true" signature="57:10449" ph="..." />
-            <marker date="1512397702567" expanded="true" signature="85:10447" ph="..." />
-            <marker date="1512397702567" expanded="true" signature="10203:10335" ph="..." />
-            <marker date="1512397702567" expanded="true" signature="10343:10442" ph="..." />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/seller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2009">
-          <caret line="223" column="26" lean-forward="false" selection-start-line="223" selection-start-column="26" selection-end-line="223" selection-end-column="26" />
+        <state relative-caret-position="5575">
+          <caret line="223" column="9" lean-forward="true" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/smartexportimport.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core_c.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/plan1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/return.php">
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_option.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_attribute.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_option.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-catalog_controller_common_cart.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_attribute.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/xml/multiseller_vqmod.xml.xml" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_common_column_left.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_common_column_left.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_setting_setting.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_catalog_product.php" />
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/seller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_model_catalog_product.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_controller_setting_setting.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/vqcache/vq2-admin_language_en-gb_catalog_product.php" />
+    <entry file="file://$PROJECT_DIR$/vqmod/multiseller_vqmod.xml.xml" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/address.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/address2.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/account.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/saccount/contact.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/contact.php" />
+    <entry file="file://$PROJECT_DIR$/seller/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1526">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/seller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5575">
+          <caret line="223" column="9" lean-forward="false" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/smartexportimport.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/plan1.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/return.php" />
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3400">
+          <caret line="157" column="29" lean-forward="false" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/common/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/model/seller/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+          <folding>
+            <marker date="1514441081128" expanded="true" signature="661:758" ph="DELETE FROM " />
+            <marker date="1514441081128" expanded="true" signature="853:1317" ph="INSERT INTO ${DB_PREFIX}category_description... " />
+            <marker date="1514441081128" expanded="true" signature="1405:1514" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+            <marker date="1514441081128" expanded="true" signature="1653:1813" ph="DELETE FROM " />
+            <marker date="1514441081128" expanded="true" signature="1902:2021" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+            <marker date="1514441081128" expanded="true" signature="2185:2315" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+            <marker date="1514441081128" expanded="true" signature="2797:2889" ph="DELETE FROM " />
+            <marker date="1514441081128" expanded="true" signature="2974:3093" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+            <marker date="1514441081128" expanded="true" signature="3158:3326" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+            <marker date="1514441081128" expanded="true" signature="3602:3954" ph="INSERT INTO ${DB_PREFIX}category... " />
+            <marker date="1514441081128" expanded="true" signature="4327:4802" ph="INSERT INTO ${DB_PREFIX}category_description... " />
+            <marker date="1514441081128" expanded="true" signature="4853:4974" ph="SELECT * FRO... ${DB_PREFIX}category_path" />
+            <marker date="1514441081128" expanded="true" signature="5037:5209" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+            <marker date="1514441081128" expanded="true" signature="5250:5416" ph="INSERT INTO `${DB_PREFIX}category_path`... " />
+            <marker date="1514441081128" expanded="true" signature="5537:5666" ph="INSERT INTO ${DB_PREFIX}category_filter... " />
+            <marker date="1514441081128" expanded="true" signature="5793:5922" ph="INSERT INTO ${DB_PREFIX}category_to_store... " />
+            <marker date="1514441081128" expanded="true" signature="6143:6322" ph="INSERT INTO ${DB_PREFIX}category_to_layout... " />
+            <marker date="1514441081128" expanded="true" signature="6388:6535" ph="INSERT INTO ${DB_PREFIX}url_alias... " />
+            <marker date="1514441081128" expanded="true" signature="8215:8890" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="8994:9633" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="10522:11038" ph="SELECT c.*,c... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="11259:12020" ph="SELECT c1.ap... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="12882:13646" ph="SELECT cp.ca... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="14411:14888" ph="SELECT c.*,c... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="15027:15490" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="15535:15860" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="15991:16295" ph="SELECT name,... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="16665:16764" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="17280:17376" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="17621:17718" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="18078:18193" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="18434:18549" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="18679:18776" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081128" expanded="true" signature="18903:19012" ph="SELECT COUNT... ${DB_PREFIX}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/model/seller/seller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <folding>
+            <marker date="1514441081316" expanded="true" signature="118:205" ph="SELECT * FRO... ${DB_PREFIX}seller_folder" />
+            <marker date="1514441081316" expanded="true" signature="824:1066" ph="INSERT INTO ${DB_PREFIX}seller_folder... " />
+            <marker date="1514441081316" expanded="true" signature="1143:1227" ph="SELECT * FRO... ${DB_PREFIX}sellers" />
+            <marker date="1514441081316" expanded="true" signature="1336:1420" ph="SELECT * FRO... ${DB_PREFIX}sellers" />
+            <marker date="1514441081316" expanded="true" signature="1579:1677" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="1788:1876" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="2124:2212" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="2402:2488" ph="DELETE FROM " />
+            <marker date="1514441081316" expanded="true" signature="3273:3364" ph="SELECT usern... ${DB_PREFIX}sellers" />
+            <marker date="1514441081316" expanded="true" signature="3555:3777" ph="INSERT INTO ${DB_PREFIX}seller_folder... " />
+            <marker date="1514441081316" expanded="true" signature="3848:3913" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="4522:4606" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="5261:5351" ph="select commi... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="5458:5787" ph="INSERT INTO ${DB_PREFIX}upgraded_members... " />
+            <marker date="1514441081316" expanded="true" signature="6667:7495" ph="INSERT INTO ${DB_PREFIX}sellers... " />
+            <marker date="1514441081316" expanded="true" signature="7772:7977" ph="INSERT INTO ${DB_PREFIX}saddress... " />
+            <marker date="1514441081316" expanded="true" signature="11163:11247" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="11902:11992" ph="select commi... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="12099:12428" ph="INSERT INTO ${DB_PREFIX}upgraded_sellers... " />
+            <marker date="1514441081316" expanded="true" signature="13392:13495" ph="SELECT folde... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="14408:14490" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="14592:14680" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="14782:14886" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="15042:15240" ph="SELECT *, CO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="17384:17507" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="17630:17759" ph="SELECT COUNT... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="17876:17989" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="18085:18171" ph="SELECT * FRO... ${DB_PREFIX}seller_ip" />
+            <marker date="1514441081316" expanded="true" signature="18274:18367" ph="SELECT folde... ${DB_PREFIX}sellers" />
+            <marker date="1514441081316" expanded="true" signature="18477:18573" ph="SELECT * FRO... ${DB_PREFIX}seller_ip_blacklist" />
+            <marker date="1514441081316" expanded="true" signature="18683:18801" ph="SELECT SUM(a... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="19163:19296" ph="SELECT SUM(a... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="19329:19586" ph="SELECT SUM(a... ${DB_PREFIX}" />
+            <marker date="1514441081316" expanded="true" signature="19727:19837" ph="SELECT COUNT... ${DB_PREFIX}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/uploadimages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/detail_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="641" column="37" lean-forward="false" selection-start-line="641" selection-start-column="37" selection-end-line="641" selection-end-column="37" />
+          <folding>
+            <marker date="1514441080991" expanded="true" signature="29670:29695" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="29793:29857" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="30667:30678" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="35460:35478" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="38912:38930" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="42559:42573" ph="..." />
+            <marker date="1514441080991" expanded="true" signature="46393:46407" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/language/english/seller/uploadimages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/common/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/view/theme/default/template/seller/uploadimages.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/language/english/seller/invoiceorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller/catalog/controller/seller/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="210" column="13" lean-forward="false" selection-start-line="210" selection-start-column="13" selection-end-line="210" selection-end-column="13" />
           <folding />
         </state>
       </provider>

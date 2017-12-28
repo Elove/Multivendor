@@ -56,10 +56,10 @@ public function editCategory($category_id, $data) {
 		sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW(),
 		status = 1,
 		date_added = NOW(),seller_id='".(int)$this->seller->getId()."'");
-		$category_id = $this->db->getLastId();	
+		$category_id = $this->db->getLastId();
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "category SET image = '" . $this->db->escape(html_entity_decode($data['image'], ENT_QUOTES, 'UTF-8')) . "' WHERE category_id = '" . (int)$category_id . "'");
-		}	
+		}
 		foreach ($data['category_description'] as $language_id => $value) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "category_description SET category_id = '" . (int)$category_id . "', 
 			language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', 
@@ -94,7 +94,7 @@ public function editCategory($category_id, $data) {
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'category_id=" . (int)$category_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
-		$this->load->language('saccount/category');
+		$this->load->language('seller/category');
 		$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));
 		$message = sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
 		$message .= $this->language->get('text_approval') . "\n";
@@ -107,7 +107,7 @@ public function editCategory($category_id, $data) {
 		$mail->username = $this->config->get('config_smtp_username');
 		$mail->password = $this->config->get('config_smtp_password');
 		$mail->port = $this->config->get('config_smtp_port');
-		$mail->timeout = $this->config->get('config_smtp_timeout');				
+		$mail->timeout = $this->config->get('config_smtp_timeout');
 		$mail->setTo($this->config->get('config_email'));
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender($this->config->get('config_name'));
@@ -126,25 +126,25 @@ public function editCategory($category_id, $data) {
 		}
 		$this->cache->delete('category');
 	}
-	public function getCategory($category_id,$seller) {	
-		$query = $this->db->query("SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR ' &gt; ') FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY cp.category_id) AS path FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND seller_id IN('" . $seller . "') AND cd2.language_id = '" . (int)$this->config->get('config_language_id') . "'"); 
+	public function getCategory($category_id,$seller) {
+		$query = $this->db->query("SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR ' &gt; ') FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY cp.category_id) AS path FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND seller_id IN('" . $seller . "') AND cd2.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 		return $query->row;
 	}
 	public function getCategory1($category_id) {
-		$query = $this->db->query("SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR ' &gt; ') FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY cp.category_id) AS path FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd2.language_id = '" . (int)$this->config->get('config_language_id') . "'");	 
+		$query = $this->db->query("SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR ' &gt; ') FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY cp.category_id) AS path FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd2.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 		return $query->row;
 	}
 	// public function getCategory($category_id) {
 	// $query = $this->db->query("SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR '&nbsp;&nbsp;&gt;&nbsp;&nbsp;') FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY cp.category_id) AS path FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd2.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 	// return $query->row;
 	// }
-	public function getCategories($parent_id = 0,$seller) {	
+	public function getCategories($parent_id = 0,$seller) {
 		$query = $this->db->query("SELECT c.*,cd.language_id,cd.name,cd.description,cd.meta_description,cd.meta_keyword
 		FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd 
 		ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id)
 		WHERE c.parent_id = '" . (int)$parent_id . "' AND c.approve=1 AND c.seller_id = '" . $seller . "' AND 
 		cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.sort_order, 
-		LCASE(cd.name)");			
+		LCASE(cd.name)");
 		return $query->rows;
 	}
 	public function getallCategories1($data,$seller) {
@@ -227,15 +227,15 @@ public function editCategory($category_id, $data) {
 		$query = $this->db->query($sql);
 		return $query->rows;
 	}
-	public function getApproveCategories($parent_id = 0) {	
+	public function getApproveCategories($parent_id = 0) {
 		$query = $this->db->query("SELECT c.*,cd.language_id,cd.name,cd.description,cd.meta_description,cd.meta_keyword
 		FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd 
 		ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id)
 		WHERE c.approve=1 AND c.parent_id = '" . (int)$parent_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.sort_order, 
-		LCASE(cd.name)");			
+		LCASE(cd.name)");
 		return $query->rows;
 	}
-public function getCategories1($parent_id = 0,$seller) {		
+public function getCategories1($parent_id = 0,$seller) {
         if ($seller) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd 
 		ON (c.category_id = cd.category_id)  LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id) 
@@ -248,7 +248,7 @@ public function getCategories1($parent_id = 0,$seller) {
 		}
 		return $query->rows;
 }
-	/**code end added here **/	
+	/**code end added here **/
 	public function getPath($category_id) {
 		$query = $this->db->query("SELECT name, parent_id FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY c.sort_order, cd.name ASC");
 		if ($query->row['parent_id']) {
@@ -270,7 +270,7 @@ public function getCategories1($parent_id = 0,$seller) {
 			);
 		}
 		return $category_description_data;
-	}	
+	}
 	public function getCategoryStores($category_id) {
 		$category_store_data = array();
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category_to_store WHERE category_id = '" . (int)$category_id . "'");
@@ -295,7 +295,7 @@ public function getCategories1($parent_id = 0,$seller) {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "category where 
 		status=1 AND seller_id = '" . (int)$seller_id . "'");
 		return $query->row['total'];
-	}	
+	}
 	public function getTotalCategories() {
 		$cats = $this->config->get('config_product_category');
 		if(empty($cats)){
@@ -303,7 +303,7 @@ public function getCategories1($parent_id = 0,$seller) {
 		}else{ $cats = implode(",",$cats);}
       	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "category where status=1 AND approve=1 AND category_id IN (".$cats.")");
 		return $query->row['total'];
-	}	
+	}
 	public function getTotalCategoriesByImageId($image_id) {
       	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "category WHERE image_id = '" . (int)$image_id . "'");
 		return $query->row['total'];
@@ -311,6 +311,6 @@ public function getCategories1($parent_id = 0,$seller) {
 	public function getTotalCategoriesByLayoutId($layout_id) {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "category_to_layout WHERE layout_id = '" . (int)$layout_id . "'");
 		return $query->row['total'];
-	}		
+	}
 }
 ?>

@@ -19,8 +19,8 @@
       <div class="panel-body">
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-product" class="form-horizontal">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>           
-            <li><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>           
+            <li class="active"><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
+            <li><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>
             <li><a href="#tab-discount" data-toggle="tab"><?php echo $tab_discount; ?></a></li>
             <li><a href="#tab-special" data-toggle="tab"><?php echo $tab_special; ?></a></li>
           </ul>
@@ -41,7 +41,7 @@
                 <div class="col-sm-10">
                   <input type="text" name="quantity" value="<?php echo $quantity; ?>" placeholder="<?php echo $entry_quantity; ?>" id="input-quantity" class="form-control" />
                 </div>
-              </div>            
+              </div>
             </div>
             <div class="tab-pane" id="tab-option">
               <div class="row">
@@ -378,13 +378,13 @@ label.control-label span:after {
 	// Makes tooltips work on ajax generated content
 	$(document).ajaxStop(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
-	});	
+	});
 </script>
   <script type="text/javascript"><!--
 <?php foreach ($languages as $language) { ?>
 $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
 <?php } ?>
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 function image_upload(field, thumb) {
 	$('#dialog').remove();
@@ -401,7 +401,7 @@ function image_upload(field, thumb) {
 					}
 				});
 			}
-		},	
+		},
 		bgiframe: false,
 		width: 800,
 		height: 400,
@@ -409,7 +409,7 @@ function image_upload(field, thumb) {
 		modal: false
 	});
 };
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 var attribute_row = <?php echo $attribute_row; ?>;
 function addAttribute() {
@@ -431,7 +431,7 @@ function attributeautocomplete(attribute_row) {
 		'source': function(request, response) {
 			$.ajax({
 				url: 'index.php?route=seller/attribute/autocomplete&filter_name=' +  encodeURIComponent(request),
-				dataType: 'json',			
+				dataType: 'json',
 				success: function(json) {
 					response($.map(json, function(item) {
 						return {
@@ -452,14 +452,14 @@ function attributeautocomplete(attribute_row) {
 $('#attribute tbody tr').each(function(index, element) {
 	attributeautocomplete(index);
 });
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 // Manufacturer
 $('input[name=\'manufacturer\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
 			url: 'index.php?route=seller/product/manuautocomplete&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',			
+			dataType: 'json',
 			success: function(json) {
 				json.unshift({
 					manufacturer_id: 0,
@@ -477,14 +477,14 @@ $('input[name=\'manufacturer\']').autocomplete({
 	'select': function(item) {
 		$('input[name=\'manufacturer\']').val(item['label']);
 		$('input[name=\'manufacturer_id\']').val(item['value']);
-	}	
+	}
 });
 // Category
 $('input[name=\'category\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=saccount/category/autocomplete&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',			
+			url: 'index.php?route=seller/category/autocomplete&filter_name=' +  encodeURIComponent(request),
+			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
 					return {
@@ -498,7 +498,7 @@ $('input[name=\'category\']').autocomplete({
 	'select': function(item) {
 		$('input[name=\'category\']').val('');
 		$('#product-category' + item['value']).remove();
-		$('#product-category').append('<div id="product-category' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="product_category[]" value="' + item['value'] + '" /></div>');	
+		$('#product-category').append('<div id="product-category' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="product_category[]" value="' + item['value'] + '" /></div>');
 	}
 });
 $('#product-category').delegate('.fa-minus-circle', 'click', function() {
@@ -508,8 +508,8 @@ $('#product-category').delegate('.fa-minus-circle', 'click', function() {
 $('input[name=\'download\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=saccount/download/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',			
+			url: 'index.php?route=seller/download/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
 					return {
@@ -523,14 +523,14 @@ $('input[name=\'download\']').autocomplete({
 	'select': function(item) {
 		$('input[name=\'download\']').val('');
 		$('#product-download' + item['value']).remove();
-		$('#product-download').append('<div id="product-download' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="product_download[]" value="' + item['value'] + '" /></div>');	
-	}	
+		$('#product-download').append('<div id="product-download' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="product_download[]" value="' + item['value'] + '" /></div>');
+	}
 });
 $('#product-download').delegate('.fa-minus-circle', 'click', function() {
 	$(this).parent().remove();
 });
 new AjaxUpload('#productimage', {
-	action: 'index.php?route=saccount/extension/upload',
+	action: 'index.php?route=seller/product/upload',
 	name: 'file',
 	autoSubmit: true,
 	responseType: 'json',
@@ -540,14 +540,14 @@ new AjaxUpload('#productimage', {
 	onComplete: function(file, json) {
 		$('.error').remove();
 		if (json.success) {
-			alert(json.success);			
+			alert(json.success);
 			$("input[name='productimage']").attr('value', json.file);
 			$('#thumb').attr('src','image/'+json.foldername+json.file);
 		}
 		if (json.error) {
 			$('#option-2').html('<span class="error">' + json.error + '</span>');
 		}
-		$('.loading').remove();	
+		$('.loading').remove();
 	}
 });
 //--></script>
@@ -560,7 +560,7 @@ function addImage() {
 	html += '    <td class="text-right"><input type="text" name="product_imagename[' + image_row + '][imagetext]" value="" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '  </tr>';
-	html += '</tbody><script type="text/javascript"> new AjaxUpload("#product_image'+image_row+'", {action: "index.php?route=saccount/extension/upload",name: "file",autoSubmit: true,responseType: "json",onSubmit: function(file, extension) {$("#product_image'+image_row+'").after(\'<img src="catalog/view/theme/default/image/loading.gif" class="loading" style="padding-left: 5px;" />\');},onComplete: function(file, json) {$(".error").remove();if (json.success) {alert(json.success);$("#product_imagename'+image_row+'").attr("value", json.file);$("#thumb'+image_row+'").attr("src","image/"+json.foldername+json.file);$("#product_option'+image_row+'").html("<span >" + file + "</span>");}if (json.error) {$("#product_option'+image_row+'").html("<span >" + json.error + "</span>");}$(".loading").remove();}});</script>';
+	html += '</tbody><script type="text/javascript"> new AjaxUpload("#product_image'+image_row+'", {action: "index.php?route=seller/extension/upload",name: "file",autoSubmit: true,responseType: "json",onSubmit: function(file, extension) {$("#product_image'+image_row+'").after(\'<img src="catalog/view/theme/default/image/loading.gif" class="loading" style="padding-left: 5px;" />\');},onComplete: function(file, json) {$(".error").remove();if (json.success) {alert(json.success);$("#product_imagename'+image_row+'").attr("value", json.file);$("#thumb'+image_row+'").attr("src","image/"+json.foldername+json.file);$("#product_option'+image_row+'").html("<span >" + file + "</span>");}if (json.error) {$("#product_option'+image_row+'").html("<span >" + json.error + "</span>");}$(".loading").remove();}});</script>';
 	$('#images tfoot').before(html);
 	image_row++;
 }
@@ -569,7 +569,7 @@ function addImage() {
 function uploaddownloadfiles(buttonid){
  $("#product_image").click();
 	new AjaxUpload('#product_image'+buttonid, {
-		action: 'index.php?route=saccount/extension/upload',
+		action: 'index.php?route=seller/product/upload',
 		name: 'file',
 		autoSubmit: true,
 		responseType: 'json',
@@ -579,20 +579,20 @@ function uploaddownloadfiles(buttonid){
 		onComplete: function(file, json) {
 			$('.error').remove();
 			if (json.success) {
-				alert(json.success);			
+				alert(json.success);
 				$('#product_imagename'+buttonid).attr('value', json.file);
 				$('#product_option'+buttonid).after('<span class="image">' + file + '</span>');
 			}
 			if (json.error) {
 				$('#product_option'+buttonid).after('<span class="error">' + json.error + '</span>');
 			}
-			$('.loading').remove();	
+			$('.loading').remove();
 		}
 	});
 }
 function uploaddownloadfiles1(buttonid){
 	new AjaxUpload('#download_image'+buttonid, {
-		action: 'index.php?route=saccount/extension/download',
+		action: 'index.php?route=seller/product/download',
 		name: 'file',
 		autoSubmit: true,
 		responseType: 'json',
@@ -602,14 +602,14 @@ function uploaddownloadfiles1(buttonid){
 		onComplete: function(file, json) {
 			$('.error').remove();
 			if (json.success) {
-				alert(json.success);			
+				alert(json.success);
 				$('#download_imagename'+buttonid).attr('value', json.download_id);
 				$('#download_option'+buttonid).after('<span class="image">' + file + '</span>');
 			}
 			if (json.error) {
 				$('#download_option'+buttonid).after('<span class="error">' + json.error + '</span>');
 			}
-			$('.loading').remove();	
+			$('.loading').remove();
 		}
 	});
 }
@@ -622,9 +622,9 @@ var ImageInput = document.getElementById('dname');
             onSubmit: function(file, ext){
             alert(file);
 				if (! (ext && /^(zip|ZIP)$/.test(ext))){
-			// extension is not allowed 
+			// extension is not allowed
 			return false;
-			}           
+			}
             },
             onComplete: function(file, response){
             alert("success");
@@ -632,13 +632,13 @@ var ImageInput = document.getElementById('dname');
 }*/
  }
 //--></script>
- <script type="text/javascript"><!--	
+ <script type="text/javascript"><!--
 var option_row = <?php echo $option_row; ?>;
 $('input[name=\'option\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=saccount/option/autocomplete&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',			
+			url: 'index.php?route=seller/option/autocomplete&filter_name=' +  encodeURIComponent(request),
+			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
 					return {
@@ -675,7 +675,7 @@ $('input[name=\'option\']').autocomplete({
 			html += '	<div class="form-group">';
 			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '"><?php echo $entry_option_value; ?></label>';
 			html += '	  <div class="col-sm-10"><textarea name="product_option[' + option_row + '][value]" rows="5" placeholder="<?php echo $entry_option_value; ?>" id="input-value' + option_row + '" class="form-control"></textarea></div>';
-			html += '	</div>';			
+			html += '	</div>';
 		}
 		if (item['type'] == 'file') {
 			html += '	<div class="form-group" style="display: none;">';
@@ -704,7 +704,7 @@ $('input[name=\'option\']').autocomplete({
 		if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
 			html += '<div class="table-responsive">';
 			html += '  <table id="option-value' + option_row + '" class="table table-striped table-bordered table-hover">';
-			html += '  	 <thead>'; 
+			html += '  	 <thead>';
 			html += '      <tr>';
 			html += '        <td class="text-left"><?php echo $entry_option_value; ?></td>';
 			html += '        <td class="text-right"><?php echo $entry_quantity; ?></td>';
@@ -729,8 +729,8 @@ $('input[name=\'option\']').autocomplete({
             for (i = 0; i < item['option_value'].length; i++) {
 				html += '  <option value="' + item['option_value'][i]['option_value_id'] + '">' + item['option_value'][i]['name'] + '</option>';
             }
-            html += '  </select>';	
-			html += '</div>';	
+            html += '  </select>';
+			html += '</div>';
 		}
 		$('#tab-option .tab-content').append(html);
 		$('#option > li:last-child').before('<li><a href="#tab-option' + option_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$(\'a[href=\\\'#tab-option' + option_row + '\\\']\').parent().remove(); $(\'#tab-option' + option_row + '\').remove(); $(\'#option a:first\').tab(\'show\')"></i> ' + item['label'] + '</li>');
@@ -746,17 +746,17 @@ $('input[name=\'option\']').autocomplete({
 			pickTime: true
 		});
 		option_row++;
-	}	
+	}
 });
-//--></script> 
-  <script type="text/javascript"><!--		
+//--></script>
+  <script type="text/javascript"><!--
 var option_value_row = <?php echo $option_value_row; ?>;
-function addOptionValue(option_row) {	
+function addOptionValue(option_row) {
 	html  = '<tr id="option-value-row' + option_value_row + '">';
 	html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_value_id]" class="form-control">';
 	html += $('#option-values' + option_row).html();
 	html += '  </select><input type="hidden" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][product_option_value_id]" value="" /></td>';
-	html += '  <td class="text-right"><input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][quantity]" value="" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>'; 
+	html += '  <td class="text-right"><input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][quantity]" value="" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>';
 	html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][subtract]" class="form-control">';
 	html += '    <option value="1"><?php echo $text_yes; ?></option>';
 	html += '    <option value="0"><?php echo $text_no; ?></option>';
@@ -770,7 +770,7 @@ function addOptionValue(option_row) {
 	html += '    <option value="+">+</option>';
 	html += '    <option value="-">-</option>';
 	html += '  </select>';
-	html += '  <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][points]" value="" placeholder="<?php echo $entry_points; ?>" class="form-control" /></td>';	
+	html += '  <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][points]" value="" placeholder="<?php echo $entry_points; ?>" class="form-control" /></td>';
 	html += '  <td class="text-right"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][weight_prefix]" class="form-control">';
 	html += '    <option value="+">+</option>';
 	html += '    <option value="-">-</option>';
@@ -781,39 +781,39 @@ function addOptionValue(option_row) {
 	$('#option-value' + option_row + ' tbody').append(html);
 	option_value_row++;
 }
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 var discount_row = <?php echo $discount_row; ?>;
 function addDiscount() {
-	html  = '<tr id="discount-row' + discount_row + '">'; 
+	html  = '<tr id="discount-row' + discount_row + '">';
     html += '  <td class="text-left"><select name="product_discount[' + discount_row + '][customer_group_id]" class="form-control">';
     <?php foreach ($customer_groups as $customer_group) { ?>
     html += '    <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo addslashes($customer_group['name']); ?></option>';
     <?php } ?>
-    html += '  </select></td>';		
+    html += '  </select></td>';
     html += '  <td class="text-right"><input type="text" name="product_discount[' + discount_row + '][quantity]" value="" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>';
     html += '  <td class="text-right"><input type="text" name="product_discount[' + discount_row + '][priority]" value="" placeholder="<?php echo $entry_priority; ?>" class="form-control" /></td>';
 	html += '  <td class="text-right"><input type="text" name="product_discount[' + discount_row + '][price]" value="" placeholder="<?php echo $entry_price; ?>" class="form-control" /></td>';
     html += '  <td class="text-left"><div class="input-group date"><input type="text" name="product_discount[' + discount_row + '][date_start]" value="" placeholder="<?php echo $entry_date_start; ?>" data-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
 	html += '  <td class="text-left"><div class="input-group date"><input type="text" name="product_discount[' + discount_row + '][date_end]" value="" placeholder="<?php echo $entry_date_end; ?>" data-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#discount-row' + discount_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
-	html += '</tr>';	
+	html += '</tr>';
 	$('#discount tbody').append(html);
 	$('.date').datetimepicker({
 		pickTime: false
 	});
 	discount_row++;
 }
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 var special_row = <?php echo $special_row; ?>;
 function addSpecial() {
-	html  = '<tr id="special-row' + special_row + '">'; 
+	html  = '<tr id="special-row' + special_row + '">';
     html += '  <td class="text-left"><select name="product_special[' + special_row + '][customer_group_id]" class="form-control">';
     <?php foreach ($customer_groups as $customer_group) { ?>
     html += '      <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo addslashes($customer_group['name']); ?></option>';
     <?php } ?>
-    html += '  </select></td>';		
+    html += '  </select></td>';
     html += '  <td class="text-right"><input type="text" name="product_special[' + special_row + '][priority]" value="" placeholder="<?php echo $entry_priority; ?>" class="form-control" /></td>';
 	html += '  <td class="text-right"><input type="text" name="product_special[' + special_row + '][price]" value="" placeholder="<?php echo $entry_price; ?>" class="form-control" /></td>';
     html += '  <td class="text-left"><div class="input-group date"><input type="text" name="product_special[' + special_row + '][date_start]" value="" placeholder="<?php echo $entry_date_start; ?>" data-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
@@ -826,7 +826,7 @@ function addSpecial() {
 	});
 	special_row++;
 }
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 $('.date').datetimepicker({
 	pickTime: false
@@ -838,9 +838,9 @@ $('.datetime').datetimepicker({
 	pickDate: true,
 	pickTime: true
 });
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
 $('#option a:first').tab('show');
 //--></script></div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

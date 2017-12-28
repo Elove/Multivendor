@@ -7,7 +7,7 @@ public function addFolder($parent,$data) {
 		/*$fPath = "image/".$path;
 		$exist = is_dir($fPath);
 		if($exist) {
-			$folder = $fPath."/".$data['folder_name'];	
+			$folder = $fPath."/".$data['folder_name'];
 			if(!is_dir($folder)){
 				//echo "okokoko";die;
 				mkdir("$folder");
@@ -15,37 +15,37 @@ public function addFolder($parent,$data) {
 			}
 		}*/
 		$fPath1 = DIR_IMAGE. $path;
-		$exist1 = is_dir($fPath1); 
+		$exist1 = is_dir($fPath1);
         if($exist1) {
-			$folder1 = $fPath1."/".$data['folder_name'];	
+			$folder1 = $fPath1."/".$data['folder_name'];
 			if(!is_dir($folder1)){
 				//echo "okokoko";die;
 				mkdir("$folder1");
 				chmod("$folder1", 0777);
 			}
 		}
-		$folder = $path."/".$data['folder_name'];	
+		$folder = $path."/".$data['folder_name'];
 		$this->db->query("INSERT INTO " . DB_PREFIX . "seller_folder SET seller_id='" . (int)$this->seller->getId() . "', parent_folder = '" . $this->db->escape($parent_folder) . "', folder_name = '" . $this->db->escape($data['folder_name']) . "', path = '".$folder."'");
-	}	
+	}
 	public function addImages($folder_id) {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "sellers` WHERE seller_id = '" . (int)$folder_id . "'");
 		return $query->row['foldername'];
-	}	
+	}
 	public function getfolders($data=array(),$seller_id) {
-		$sql = "SELECT * FROM `" . DB_PREFIX . "sellers` WHERE seller_id = '" . (int)$seller_id . "'";	
-		$query = $this->db->query($sql);		
+		$sql = "SELECT * FROM `" . DB_PREFIX . "sellers` WHERE seller_id = '" . (int)$seller_id . "'";
+		$query = $this->db->query($sql);
 		return $query->rows;
-	}	
+	}
 	public function getTotalFolders($data=array(),$seller_id) {
       	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "sellers where seller_id = '" . (int)$seller_id . "'");
 		return $query->row['total'];
-	}	
+	}
 	public function deleteImages($folder_id) {
 	 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "seller_folder WHERE folder_id = '" . (int)$folder_id . "'");
 		if($query->row['path']){
-	    $dir = DIR_IMAGE.$query->row['path'];	    
+	    $dir = DIR_IMAGE.$query->row['path'];
 		$this->rrmdir1($dir);
-		$dir1 = DIR_IMAGE1.$query->row['path'];	    
+		$dir1 = DIR_IMAGE1.$query->row['path'];
 		$this->rrmdir1($dir1);
 	    }
 	}
@@ -64,8 +64,8 @@ public function addFolder($parent,$data) {
     $objects = scandir($dir);
     foreach ($objects as $object) {
       if ($object != "." && $object != "..") {
-        if (filetype($dir."/".$object) == "dir") 
-           $this->rrmdir($dir."/".$object); 
+        if (filetype($dir."/".$object) == "dir")
+           $this->rrmdir($dir."/".$object);
         else unlink   ($dir."/".$object);
       }
     }
@@ -78,8 +78,8 @@ public function addFolder($parent,$data) {
     $objects = scandir($dir);
     foreach ($objects as $object) {
       if ($object != "." && $object != "..") {
-        if (filetype($dir."/".$object) == "dir") 
-           $this->rrmdir1($dir."/".$object); 
+        if (filetype($dir."/".$object) == "dir")
+           $this->rrmdir1($dir."/".$object);
         else unlink   ($dir."/".$object);
       }
     }
@@ -96,7 +96,7 @@ public function addFolderForSeller($seller_id) {
 		chmod("$fPath", 0777);
 		}
 		$this->db->query("INSERT INTO " . DB_PREFIX . "seller_folder SET seller_id='" . (int)$seller_id . "', parent_folder = '" . $this->db->escape($folderName) . "', folder_name = '" . $this->db->escape($folderName) . "', path = '".$folderName."'");
-	}	
+	}
 public function getcommissions() {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "commission ORDER BY sort_order ASC");
 		return $query->rows;
@@ -110,7 +110,7 @@ public function updateexpirycusts(){
 				expiry_date = '0000-00-00 00:00:00' WHERE
 				commission_id !='".(int)$config_sellercommission_id."' AND expiry_date != '0000-00-00 00:00:00' AND expiry_date < NOW()");
 			}
-			public function updatePlan($seller_id,$plan_id) {		
+			public function updatePlan($seller_id,$plan_id) {
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "commission WHERE 	commission_id = '".(int)$plan_id."'");
 			$durationid = $query->row['duration_id'];
 			$days = $query->row['per'];
@@ -174,7 +174,7 @@ public function updateexpirycusts(){
 		$seller_id = $this->db->getLastId();
 		// if ($data['username']) {
 		// 	$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'seller_id=" . (int)$seller_id . "', keyword = '" . $this->db->escape($data['username']) . "'");
-		// }	
+		// }
       	$this->db->query("INSERT INTO " . DB_PREFIX . "saddress SET seller_id = '" . (int)$seller_id . "', 
 		firstname = '" . $this->db->escape($data['firstname']) . "', 
 		lastname = '" . $this->db->escape($data['lastname']) . "'
@@ -188,14 +188,14 @@ public function updateexpirycusts(){
 		}
 		$this->load->language('mail/seller');
 		if (!$this->config->get('config_seller_autoapprove')) {
-				$subject = sprintf($this->language->get('text_approvalsubject'), $this->config->get('config_name'));	
+				$subject = sprintf($this->language->get('text_approvalsubject'), $this->config->get('config_name'));
 				$message = sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
 				$message .= $this->language->get('text_approval') . "\n";
 			}else{
-				$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));	
+				$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));
 				$message = sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
 			}
-		$message .= $this->url->link('saccount/login', '', 'SSL') . "\n\n";
+		$message .= $this->url->link('seller/login', '', 'SSL') . "\n\n";
 		$message .= $this->language->get('text_services') . "\n\n";
 		$message .= $this->language->get('text_thanks') . "\n";
 		$message .= $this->config->get('config_name');
@@ -238,7 +238,7 @@ public function updateexpirycusts(){
 				expiry_date = '0000-00-00 00:00:00' WHERE
 				commission_id !='".(int)$config_sellercommission_id."' AND expiry_date != '0000-00-00 00:00:00' AND expiry_date < NOW()");
 			}
-			public function updatePlan1($seller_id,$plan_id) {		
+			public function updatePlan1($seller_id,$plan_id) {
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "commission WHERE 	commission_id = '".(int)$plan_id."'");
 			$durationid = $query->row['duration_id'];
 			$days = $query->row['per'];
@@ -320,16 +320,16 @@ public function updateexpirycusts(){
 		}
 		if (isset($data['filter_seller_group_id']) && !is_null($data['filter_seller_group_id'])) {
 			$implode[] = "cg.seller_group_id = '" . $this->db->escape($data['filter_seller_group_id']) . "'";
-		}	
+		}
 		if (isset($data['filter_status']) && !is_null($data['filter_status'])) {
 			$implode[] = "c.status = '" . (int)$data['filter_status'] . "'";
-		}	
+		}
 		if (isset($data['filter_approved']) && !is_null($data['filter_approved'])) {
 			$implode[] = "c.approved = '" . (int)$data['filter_approved'] . "'";
-		}	
+		}
 		if (isset($data['filter_ip']) && !is_null($data['filter_ip'])) {
 			$implode[] = "c.seller_id IN (SELECT seller_id FROM " . DB_PREFIX . "seller_ip WHERE ip = '" . $this->db->escape($data['filter_ip']) . "')";
-		}	
+		}
 		if (isset($data['filter_date_added']) && !is_null($data['filter_date_added'])) {
 			$implode[] = "DATE(c.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
@@ -343,11 +343,11 @@ public function updateexpirycusts(){
 			'c.status',
 			'c.ip',
 			'c.date_added'
-		);	
+		);
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			$sql .= " ORDER BY " . $data['sort'];	
+			$sql .= " ORDER BY " . $data['sort'];
 		} else {
-			$sql .= " ORDER BY name";	
+			$sql .= " ORDER BY name";
 		}
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
 			$sql .= " DESC";
@@ -357,14 +357,14 @@ public function updateexpirycusts(){
 		if (isset($data['start']) || isset($data['limit'])) {
 			if ($data['start'] < 0) {
 				$data['start'] = 0;
-			}			
+			}
 			if ($data['limit'] < 1) {
 				$data['limit'] = 20;
-			}	
+			}
 			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-		}		
+		}
 		$query = $this->db->query($sql);
-		return $query->rows;	
+		return $query->rows;
 	}
 	public function getTotalSellersByEmail($email) {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "sellers WHERE LOWER(email) = '" . $this->db->escape(strtolower($email)) . "'");
@@ -385,7 +385,7 @@ public function updateexpirycusts(){
 public function getfoldername($seller_id) {
 		$query = $this->db->query("SELECT foldername FROM `" . DB_PREFIX . "sellers` WHERE seller_id = '" . (int)$seller_id . "'");
 		return $query->row['foldername'];
-	}	
+	}
 	public function isBlacklisted($ip) {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "seller_ip_blacklist` WHERE ip = '" . $this->db->escape($ip) . "'");
 		return $query->num_rows;
@@ -397,7 +397,7 @@ public function getfoldername($seller_id) {
 	public function getTransactionTotal($seller_id) {
 		$filter_eligible_status_id = $this->config->get('config_seller_payments');
 		if(!empty($filter_eligible_status_id))
-		{	
+		{
 			$filter_eligible_status_id = implode(",",$filter_eligible_status_id);
 		}else{
 			$filter_eligible_status_id = 0;
@@ -412,11 +412,11 @@ public function getfoldername($seller_id) {
 	}
 	//  public function getTotalSalesBySellerId()
 	// {
-	//     $sql = 'SELECT SUM(op.total) AS totalSales FROM `'.DB_PREFIX.'order` o 
-	//      LEFT JOIN `'.DB_PREFIX.'order_product` op ON op.order_id = o.order_id 
+	//     $sql = 'SELECT SUM(op.total) AS totalSales FROM `'.DB_PREFIX.'order` o
+	//      LEFT JOIN `'.DB_PREFIX.'order_product` op ON op.order_id = o.order_id
 	//      LEFT JOIN `'.DB_PREFIX.'product_to_seller` pts ON pts.product_id = op.product_id';
 	//      //WHERE pts.seller_id = '".$this->customer->getId()."' AND o.order_status_id > 0
-	//     $sql .= " WHERE pts.seller_id = '".$this->customer->getId()."' AND o.order_status_id > 0";      
+	//     $sql .= " WHERE pts.seller_id = '".$this->customer->getId()."' AND o.order_status_id > 0";
 	//      $query = $this->db->query($sql);
 	//      return $query->row['totalSales'];
 	// }
